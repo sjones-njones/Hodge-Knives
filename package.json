@@ -4,6 +4,8 @@
   "description": "A site for viewing and selling custom-made knives.",
   "main": "index.js",
   "scripts": {
+    "build": "cd client && npm run build",
+    "start": "cd server && npm run start",
     "dev": "concurrently -n client,server \"cd client && npm run dev\" \"cd server && npm run dev\""
   },
   "keywords": [],
