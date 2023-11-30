@@ -8,6 +8,10 @@ const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const {typeDefs, resolvers} = require("./schemas")
 
+app.get("/demo", async (req, res) => {
+  const data = await User.find({}); 
+  res.json(data);
+})
 const server = new ApolloServer({
   typeDefs,
   resolvers,
