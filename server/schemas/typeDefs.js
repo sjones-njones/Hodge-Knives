@@ -1,11 +1,13 @@
 const typeDefs = `
 type User {
-  userName: String
-  id: ID
+  name: String!,
+  email: String!,
+  password: String!,
+  _id: ID!
 }
 
 type Query {
-  user: User
+  users: [User]
 }
 `;
 
