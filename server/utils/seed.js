@@ -20,7 +20,7 @@ async function cleanDB(modelName, collectionName) {
 }
 
 db.once("open", async () => {
-  await cleanDB("User", "user");
+  await cleanDB("User", "users");
   await models.User.create(userSeeds);
 
   console.log("all done!");
