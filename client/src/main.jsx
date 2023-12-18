@@ -7,14 +7,14 @@ import './index.css'
 import Home from './Pages/Home.jsx';
 import Signup from './Pages/Signup.jsx';
 import Login from './Pages/Login.jsx';
-import ErrorPage from './pages/Error';
+// import ErrorPage from './pages/Error';
 import About from './Pages/About.jsx';
 import Care from './Pages/Care.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
     children: [
       {
         index: true,
