@@ -24,13 +24,13 @@ const Users = () => {
 
   return (
     <div>
-      <h1>Users Coming Soon!...Like right now!</h1>
-      {data.users.map((user) => (
-        <p key={user._id}>
-          Name: {user.name} <br></br>
-          Email: {user.email}
-        </p>
-      ))}
+      {/* <h1>Users Coming Soon!...Like right now!</h1> */}
+      {/* {data.users.map((user) => ( */}
+        {/* <p key={user._id}> */}
+          {/* Name: {user.name} <br></br> */}
+          {/* Email: {user.email} */}
+        {/* </p> */}
+      {/* ))} */}
     </div>
   );
 };

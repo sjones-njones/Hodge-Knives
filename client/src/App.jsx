@@ -1,22 +1,29 @@
-import react from 'react';
-import Home from './Home';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
-import Users from "./Users"
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { Outlet } from 'react-router-dom';
+import './Home.css';
+
+import About from "./Pages/About";
+import Login from "./Pages/Login";
+import Users from "./Users";
+import Signup from "./Pages/Signup";
+import Footer from "./Components/Footer/index";
+import Home from "./Pages/Home";
+import NavTabs from './Components/NavTabs';
 const client = new ApolloClient({
-  uri: '/graphql',
+  uri: "/graphql",
   cache: new InMemoryCache(),
 });
 
-const App = () => {
-  return (
-    <ApolloProvider client={client}>
+const App = () => (
+  <ApolloProvider client={client}>
     <div>
-      <Users/>
-      <p> above</p>
-      <Home/>
+      <NavTabs />
+      <main className="mx-3 ">
+        <Outlet />
+      </main>
+    <Footer />
     </div>
-      </ApolloProvider>
-  )
-}
+  </ApolloProvider>
+);
 
 export default App;
