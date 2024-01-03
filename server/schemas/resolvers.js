@@ -1,9 +1,30 @@
 const { GraphQLError } = require("graphql");
-const { User } = require("../models");
+const { User, Product, Category } = require("../models");
 const { signToken } = require("../utils/jwt");
 
 const resolvers = {
   Query: {
+    categories: async () => {
+      return await Category.find();
+    },
+    products: async (_, { category, name }) => {
+      const params = {};
+
+      if (category) {
+        params.category = category;
+      }
+
+      if (name) {
+        params.name = {
+          $regex: name,
+        };
+      }
+
+      return await Product.find(params).populate('category');
+    },
+    product: async (_, { _id }) => {
+      return await Product.findById(_id).populate('category');
+    },
     users: async () => User.find({}),
   },
   Mutation: {
