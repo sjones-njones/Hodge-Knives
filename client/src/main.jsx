@@ -6,6 +6,8 @@ import App from './App.jsx'
 import './index.css'
 import Home from './Pages/Home.jsx';
 import Signup from './Pages/Signup.jsx';
+import Admin from './Pages/Admin.jsx';
+
 import Login from './Pages/Login.jsx';
 // import ErrorPage from './pages/Error';
 import About from './Pages/About.jsx';
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/About',
         element: <About />
+      },
+      {
+        path: '/Admin',
+        element: <Admin />
       },
       {
         path: '/Care',
