@@ -4,35 +4,11 @@ const { signToken } = require("../utils/jwt");
 
 const resolvers = {
   Query: {
-    // categories: async () => {
-    // return await Category.find();
-    // },
-    // products: async (_, { category, name }) => {
-    //   const params = {};
-
-    //   if (category) {
-    //     params.category = category;
-    //   }
-
-    //   if (name) {
-    //     params.name = {
-    //       $regex: name,
-    //     };
-    //   }
-
-    //   return Product.find(params).populate("category");
-    // },
-
-    // product: async (_, { _id }) => {
-    //   return await Product.findById(_id).populate('category');
-    // },
-    products: async () => {
-      return Product.find();
-    },
-    product: async (_, { productId }) => {
-      return Product.findOne({ _id: productId });
-    },
-    users: async () => User.find({}),
+    users: async () => User.find(),
+    user: async (parent, { userId }) => User.findOne({ _id: userId }),
+    products: async () => Product.find(),
+    product: async (parent, { productId }) =>
+      Product.findOne({ _id: productId }),
   },
   Mutation: {
     login: async (_, args) => {
@@ -53,7 +29,7 @@ const resolvers = {
           return { token };
         }
       } catch (error) {
-        return new GraphQLError("Invalid Sign Up", {
+        return new GraphQLError("Invalid Sign In", {
           extensions: {
             code: "BAD_USER_INPUT",
           },
@@ -82,23 +58,21 @@ const resolvers = {
       const product = await Product.create(args);
       return product;
     },
-    removeProduct: async (_, { productId }) => {
-      return Product.findOneAndDelete({ _id: productId });
-    },
-    updateProduct: async (_, { productData }, context) => {
-      const updatedProduct = await Product.findByIdAndUpdate(
-        { _id: context.productData._id },
-        {
-          $set: {
-            updateProduct: productData,
-          },
-        },
-        { new: true },
-      );
-      return updatedProduct;
-    }
+    removeProduct: async (_, { productId }) => Product.findOneAndDelete({ _id: pro }),
+
+    // updateProduct: async (_, { productData }, context) => {
+    //   const updatedProduct = await Product.findByIdAndUpdate(
+    //     { _id: context.productData._id },
+    //     {
+    //       $set: {
+    //         updateProduct: productData,
+    //       },
+    //     },
+    //     { new: true },
+    //   );
+    //   return updatedProduct;
+    // },
   },
 };
-
 
 module.exports = resolvers;

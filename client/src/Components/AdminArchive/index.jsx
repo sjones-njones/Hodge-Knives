@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 // import ProductItem from '../ProductItem/index';
+import { Link, useLocation } from 'react-router-dom';
+
 import { useStoreContext } from '../../../utils/GlobalState';
 // import { UPDATE_PRODUCTS } from '../../../utils/actions';
 import { useQuery } from '@apollo/client';
@@ -27,7 +29,7 @@ query Products {
 `;
 
 
-function ProductList() {
+function AdminArchive() {
   const { loading, error, data } = useQuery(GET_PRODUCTS);
   // const [data, setProduct] = useState([]);
 
@@ -45,7 +47,7 @@ function ProductList() {
         <Row>
           {data.products.map((product) => (
             <Col key={product._id} xs={12} md={4} lg={3}>
-              <Card className="hover card bg-black" style={{ width: 300 }}>
+              <Card className="card bg-black" style={{ width: 300 }}>
  
                 <Card.Img className="card-img-top" src={`/images/${product.image}`}  style={{ width: 275, height: 425 }}
           alt={product.name}/>
@@ -61,9 +63,9 @@ function ProductList() {
         </Row>
       </Container>
 
-
-
-
+      <Link to ="/Admin">
+        <button>Back to Admin Page</button>
+        </Link>
 
 
     </div>
@@ -71,4 +73,5 @@ function ProductList() {
 }
 
 
-export default ProductList;
+export default AdminArchive;
+

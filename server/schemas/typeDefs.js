@@ -10,15 +10,12 @@ const typeDefs = `
     token: String!
   }
 
-  type Query {
-    users: [User]
-  }
-
+  
   type Category {
     _id: ID
     name: String
   }
-
+  
   type Product {
     _id: ID
     name: String
@@ -26,19 +23,25 @@ const typeDefs = `
     image: String
     quantity: Int
     price: Float
-    category: Category
+    category: String
   }
-
+  
   type Query {
-    categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
+    users: [User]
+  }
+  
+  type Query {
+    products: [Product]!
+    product(productId: ID!): Product
     user: User
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     signup(name: String!, email: String!, password: String!): Auth
+    addProduct(name: String!, category: String!, description: String!, price: Int!, image: String!): Product
+    removeProduct(productId: ID!): Product
+    updateProduct(productId: ID!, name: String!): Product
   }
 `;
 

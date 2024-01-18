@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 // import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../../utils/actions";
-import { idbPromise } from "../../../utils/helpers";
+// import { idbPromise } from "../../../utils/helpers";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -57,3 +57,35 @@ function ProductItem(item) {
 }
 
 export default ProductItem;
+
+// import { Link } from "react-router-dom";
+
+// function ProductItem(item) {
+
+//   const {
+//     image,
+//     name,
+//     _id,
+//     price,
+//   } = item;
+
+
+
+
+//   return (
+//     <div className="card px-1 py-1">
+//       <Link to={`/products/${_id}`}>
+//         <img
+//           alt={name}
+//           src={`/images/${image}`}
+//         />
+//         <p>{name}</p>
+//       </Link>
+//       <div>
+//         <span>${price}</span>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default ProductItem;

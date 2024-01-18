@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import Logo from "../assets/images/hodge-knives-logo.png";
+import Logo from "../../assets/images/hodge-knives-logo.png";
 function NavTabs() {
   const currentPage = useLocation().pathname;
   return (
@@ -40,12 +40,37 @@ function NavTabs() {
       </li>
       <li className="nav-item">
         <Link
+          to="/Past"
+          className={currentPage === '/Past' ? 'nav-link active' : 'nav-link'}
+          >
+          Past Knives
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
           to="/Care"
           className={currentPage === '/Care' ? 'nav-link active' : 'nav-link'}
           >
           Knife Care
         </Link>
       </li>
+      <li className="nav-item">
+        <Link
+          to="/Admin"
+          className={currentPage === '/Admin' ? 'nav-link active' : 'nav-link'}
+          >
+          Admin
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="/trial"
+          className={currentPage === '/Trial' ? 'nav-link active' : 'nav-link'}
+          >
+          Trial
+        </Link>
+      </li>
+
     </ul>
           </>
   );
