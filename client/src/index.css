@@ -6,7 +6,15 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: black;
+.hover:hover{
+  /* background-color: darkgrey; */
+  /* opacity: 0.5; */
+}
+  .label{
+    text-align: left;
+    font-size: larger;
 
+  }
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
