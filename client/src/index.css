@@ -7,9 +7,9 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: black;
 .hover:hover{
-  background-color: yellow;
   /* opacity: 0.5; */
-  box-shadow: yellow 0px 1px 0px,yellow 0px 0px 8px;
+  box-shadow: #f1bc1c 0px 1px 0px,#f1bc1c 0px 0px 8px;
+  background-color: #f1bc1c;
 }
   .label{
     text-align: left;
