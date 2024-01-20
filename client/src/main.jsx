@@ -7,12 +7,14 @@ import './index.css'
 import Home from './Pages/Home.jsx';
 import Signup from './Pages/Signup.jsx';
 import Admin from './Pages/Admin.jsx';
+import Detail from './Pages/Detail.jsx';
 import AdminProductList from './Components/AdminProductList';
 // import AddProducts from './Pages/AddProducts.jsx';
 import AdminArchive from './Components/AdminArchive';
 import Login from './Pages/Login.jsx';
 // import ErrorPage from './pages/Error';
 import About from './Pages/About.jsx';
+import Trial from './Pages/Trial/Trial.jsx';
 import Care from './Pages/Care.jsx';
 import AdminAddProducts from './Components/AdminAddProducts';
 const router = createBrowserRouter([
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
       }, {
         path: '/signup',
         element: <Signup />
-      }, 
+      },
       {
         path: '/About',
         element: <About />
@@ -51,10 +53,16 @@ const router = createBrowserRouter([
         path: '/Admin/AddProducts',
         element: <AdminAddProducts />
       },
-      
       {
         path: '/Care',
         element: <Care />
+      },
+      {
+        path: '/Trial',
+        element: <Trial />
+      }, {
+        path: '/products/:id',
+        element: <Detail />
       },
       // {
       //   path: '/profiles/:profileId',

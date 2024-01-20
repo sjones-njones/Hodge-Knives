@@ -7,8 +7,9 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: black;
 .hover:hover{
-  /* background-color: darkgrey; */
+  background-color: yellow;
   /* opacity: 0.5; */
+  box-shadow: yellow 0px 1px 0px,yellow 0px 0px 8px;
 }
   .label{
     text-align: left;
@@ -73,5 +74,11 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+  .nav-link{
+    color: #f1bc1c;
+  }
+  .nav-link:hover {
+color:white
   }
 }
