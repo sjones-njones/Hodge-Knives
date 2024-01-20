@@ -38,34 +38,49 @@ function ProductList() {
   if (error) {
     return <p>Something has gone terribly wrong</p>;
   }
-    return (
-      <div>
+  return (
+    <div>
 
-      <Container>
+      {/* <Container>
         <Row>
           {data.products.map((product) => (
             <Col key={product._id} xs={12} md={4} lg={3}>
-              <Card className="hover card bg-black" style={{ width: 300 }}>
- 
-                <Card.Img className="card-img-top" src={`/images/${product.image}`}  style={{ width: 275, height: 425 }}
-          alt={product.name}/>
+              <Card xs={12} md={4} lg={3} className="h-75 text-center border-warning hover card bg-black" style={{ width: 300 }}>
+                <div className="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
 
-                <Card.Body>
-                  <Card.Title className='fs-3 text-white'>{product.name}</Card.Title>
+                  <Card.Img className="img-fluid card-img-top" src={`/images/${product.image}`} style={{ width: 275, height: 425 }}
+                    alt={product.name} />
 
-                  <Card.Text className='fs-5 text-white'>${product.price}</Card.Text>
-                </Card.Body>
+
+                  <Card.Body>
+                    <Card.Title className='fs-3 text-white'>{product.name}</Card.Title>
+
+              <div className="mask bg-light" ></div>
+                    <Card.Text className='fs-5 text-white'>${product.price}</Card.Text>
+                  </Card.Body>
+                </div>
               </Card>
             </Col>
           ))}
         </Row>
       </Container>
 
-
-
-
-
-
+      */}
+    <Row xs={12} sm={8} md={3} lg={4} className="g-4">
+    {data.products.map((product) => (
+        <Col key={product._id}>
+          <Card className='border-warning hover bg-black h-100'>
+            <Card.Img variant="top" src={`/images/${product.image}`} />
+            <Card.Body>
+              <Card.Title className='fs-3 text-white'>{product.name}</Card.Title>
+              <Card.Text fs-5 text-white>
+              ${product.price}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
     </div>
   );
 }
