@@ -38,15 +38,18 @@ mutation RemoveProduct($productId: ID!) {
 
 function ProductList() {
   const [deleteProductMutation] = useMutation(REMOVE_PRODUCTS);
-  
+
   const { loading, error, data } = useQuery(GET_PRODUCTS);
   const handleDeleteProduct = (e) => {
     console.log(e.target.value);
-    const { data } = deleteProductMutation ({
-      variables:  { productId: e.target.value } 
+    const { data } = deleteProductMutation({
+      variables: { productId: e.target.value }
     });
   }
 
+  const handleUpdateButton = (e) => {
+console.log(e.target.value);
+  }
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -71,9 +74,13 @@ function ProductList() {
                     {product.description}
                   </Card.Text>
                 </Card.Body>
-                <Button value={product._id}className='btn hover m-1 btn-sm btn-warning text-dark fs-5'                         onClick={handleDeleteProduct}
->Delete Product</Button>
-                <Button className='btn hover m-1 btn-sm btn-warning text-dark fs-5'>Update Product</Button>
+                <Button value={product._id} className='btn hover m-1 w-100  btn-warning text-dark fs-5' onClick={handleDeleteProduct}
+                >Delete Product</Button>
+                {/* <Link to={ `/Admin/Inventory/Update/${_id}`
+                } key={product._id}
+                  > */}
+                  <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' onClick={handleUpdateButton}>Update Product</Button>
+                {/* </Link> */}
               </Card>
             </Col>
           ))}
@@ -81,7 +88,7 @@ function ProductList() {
       </div>
 
 
-      
+
       <Link to="/Admin">
         <button className='btn btn-lg btn-warning m-3'>Back to Admin Page</button>
       </Link>

@@ -8,9 +8,12 @@
   background-color: black;
 .hover:hover{
   /* opacity: 0.5; */
-  box-shadow: #f1bc1c 0px 1px 0px,#f1bc1c 0px 0px 8px;
+  box-shadow: #f1bc1c 0px 1px 0px,#f1bc1c 0px 0px 5px;
   background-color: #f1bc1c;
 }
+.links {
+  text-decoration: none;
+  }
   .label{
     text-align: left;
     font-size: larger;

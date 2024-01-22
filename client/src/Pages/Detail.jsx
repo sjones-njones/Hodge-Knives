@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { gql } from "@apollo/client";
 // import Spinner from "../assets/images/spinner.gif";
 // import { useStoreContext } from '../../utils/GlobalState';
+import { Card, Row, Col, Container, Button } from "react-bootstrap";
 
 import { Link, useParams, Route, Routes } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
@@ -22,13 +23,28 @@ function Detail() {
   const { data } = useQuery(QUERY_PRODUCTS, {
     variables: { productId: id },
   });
-  console.log({ id });
 const currentProduct = data?.product || {};
   // Get the userId param from the URL.
   return (
-    <div>
-      {currentProduct.name}
-<h1>{id}</h1>
+    <div className="row justify-content-center">
+    <Card className='m-5 w-75 border-warning bg-black'>
+        <Card.Title className='fs-1 mb-5 text-white'>{currentProduct.name}</Card.Title>
+                <Card.Img className="w-50 mx-auto" variant="top" src={`/images/${currentProduct.image}`} />
+                <Card.Body>
+                  <Card.Text className='fs-4 text-white'>
+                    {currentProduct.description}
+                  </Card.Text>
+                <Card.Text className='fs-3 text-white'>
+                  ${currentProduct.price}
+                </Card.Text>
+                </Card.Body>
+                <Button className='btn hover m-1 w-25 btn-warning text-dark fs-5'>Add to Cart</Button>
+                <Link to={ `/Shop`
+                } 
+                  > 
+                  <Button className='btn hover m-1 w-25 btn-warning text-dark fs-5'>Back to Shop</Button>
+                </Link>
+              </Card>
     </div>
   );
 }
