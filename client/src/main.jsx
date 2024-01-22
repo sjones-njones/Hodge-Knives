@@ -14,9 +14,12 @@ import AdminArchive from './Components/AdminArchive';
 import Login from './Pages/Login.jsx';
 // import ErrorPage from './pages/Error';
 import About from './Pages/About.jsx';
+import Shop from './Pages/Shop.jsx';
+
 import Trial from './Pages/Trial/Trial.jsx';
 import Care from './Pages/Care.jsx';
 import AdminAddProducts from './Components/AdminAddProducts';
+import AdminUpdateProduct from './Pages/AdminUpdateProduct.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,6 +48,10 @@ const router = createBrowserRouter([
         path: '/Admin/Inventory',
         element: <AdminProductList />
       },
+           {
+        path: '/Admin/Inventory/Update/:id',
+        element: <AdminUpdateProduct />
+      },
       {
         path: '/Admin/Archive',
         element: <AdminArchive />
@@ -56,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: '/Care',
         element: <Care />
+      },
+      {
+        path: '/Shop',
+        element: <Shop />
       },
       {
         path: '/Trial',
