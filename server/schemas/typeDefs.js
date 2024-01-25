@@ -21,6 +21,11 @@ const typeDefs = `
     name: String
     description: String
     image: String
+    image2: String
+    image3: String
+    image4: String
+    image5: String
+    image6: String
     quantity: Int
     price: Float
     category: String
@@ -39,7 +44,7 @@ const typeDefs = `
   type Mutation {
     login(email: String!, password: String!): Auth
     signup(name: String!, email: String!, password: String!): Auth
-    addProduct(name: String!, category: String!, description: String!, price: Int!, image: String!): Product
+    addProduct(name: String!, category: String!, description: String!, price: Int!, image: String!, image2: String, image3: String, image4: String, image5: String, image6: String): Product
     removeProduct(productId: ID!): Product
     updateProduct(productId: ID!, name: String!): Product
   }
