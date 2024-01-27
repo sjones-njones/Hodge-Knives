@@ -59,19 +59,9 @@ function NavTabs() {
           to="/Admin"
           className={currentPage === '/Admin' ? 'nav-link active' : 'nav-link'}
           >
-          Admin
-        </Link>
+                  </Link>
       </li>
-      <li className="nav-item">
-        <Link
-          to="/trial"
-          className={currentPage === '/Trial' ? 'nav-link active' : 'nav-link'}
-          >
-          Trial
-        </Link>
-      </li>
-
-    </ul>
+        </ul>
           </>
   );
 }

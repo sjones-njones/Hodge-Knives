@@ -15,8 +15,7 @@ import Login from './Pages/Login.jsx';
 // import ErrorPage from './pages/Error';
 import About from './Pages/About.jsx';
 import Shop from './Pages/Shop.jsx';
-
-import Trial from './Pages/Trial/Trial.jsx';
+import ProductAdded from './Pages/ProductAdded.jsx'
 import Care from './Pages/Care.jsx';
 import AdminAddProducts from './Components/AdminAddProducts';
 import AdminUpdateProduct from './Pages/AdminUpdateProduct.jsx';
@@ -48,7 +47,7 @@ const router = createBrowserRouter([
         path: '/Admin/Inventory',
         element: <AdminProductList />
       },
-           {
+      {
         path: '/Admin/Inventory/Update/:id',
         element: <AdminUpdateProduct />
       },
@@ -68,12 +67,13 @@ const router = createBrowserRouter([
         path: '/Shop',
         element: <Shop />
       },
-      {
-        path: '/Trial',
-        element: <Trial />
-      }, {
+     {
         path: '/products/:id',
         element: <Detail />
+      },
+      {
+        path: '/productAdded',
+        element: <ProductAdded />
       },
       // {
       //   path: '/profiles/:profileId',
