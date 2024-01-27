@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { useMutation, gql } from "@apollo/client";
 import giveMeMyStuff from "../decode";
-import ProductList from "../Components/ProductList";
+import AvailableProductList from "../Components/AvailableProductList";
 import AdminAddProducts from "../Components/AdminAddProducts";
 import AdminProductList from "../Components/AdminProductList";
 

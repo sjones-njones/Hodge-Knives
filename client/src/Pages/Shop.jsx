@@ -1,11 +1,11 @@
 import "../Home.css";
-import ProductList from "../Components/ProductList";
+import AvailableProductList from "../Components/AvailableProductList";
 
 const Shop = () => {
  
   return (
     <div>
-      <ProductList />
+      <AvailableProductList />
     </div>
   );
 };

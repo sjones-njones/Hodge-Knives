@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import {Link, Routes, Route, useNavigate} from 'react-router-dom';
 import { useMutation, gql } from "@apollo/client";
 import { Button } from "react-bootstrap";
 
@@ -27,6 +27,7 @@ mutation AddProduct(
 }
 `
 const AdminAddProducts = () => {
+  const navigate = useNavigate();
   const [name, setName] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [image, setImage] = React.useState("");
@@ -39,7 +40,7 @@ const AdminAddProducts = () => {
 
   async function handleOnSubmit(event) {
     event.preventDefault();
-    navigate('/Admin/AddProducts');
+    navigate('/productAdded', {replace: true});
     const data = await addProductMutation({
       variables: {
         name,
@@ -166,11 +167,11 @@ const AdminAddProducts = () => {
             <option className="text-black fs-5" value="Archive">Archive</option>
           </select>
         </div>
-        <Button type="submit" className="btn btn-warning btn-lg btn-secondary m-2 w-25 fs-4">Add Product</Button>
-        <Link to="/Admin">
-          <button type="button" className="btn btn-warning btn-lg btn-secondary m-2 w-25 fs-4">Back</button>
-        </Link>
+        <Button type="submit" className="btn btn-warning btn-lg btn-secondary m-2 w-50">Add Product</Button>
       </form>
+        <Link to="/Admin">
+          <button type="button" className="btn btn-warning btn-lg btn-secondary m-2 w-25">Back</button>
+        </Link>
     </div>
   );
 };

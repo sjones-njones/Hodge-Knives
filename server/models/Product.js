@@ -20,15 +20,6 @@ const productSchema = new Schema({
   image3: {
     type: String
   }, 
-  image4: {
-    type: String
-  },
-  image5: {
-    type: String
-  },
-  image6: {
-    type: String
-  },
   price: {
     type: Number,
     min: 0.99

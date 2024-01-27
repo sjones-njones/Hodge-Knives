@@ -11,7 +11,7 @@ import { useQuery } from '@apollo/client';
 import { gql } from "@apollo/client";
 import Maker from '../../assets/images/makerPic.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Row, Col, Container } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 // import { name } from '@cloudinary/url-gen/actions/namedTransformation';
 
 const GET_PRODUCTS = gql`
@@ -29,7 +29,7 @@ query Products {
 `;
 
 
-function ProductList(item) {
+function AvailableProductList(item) {
   const {
     image,
     name,
@@ -77,4 +77,4 @@ console.log(data);
 }
 
 
-export default ProductList;
+export default AvailableProductList;
