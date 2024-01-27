@@ -36,7 +36,7 @@ mutation RemoveProduct($productId: ID!) {
 }
 `
 
-function ProductList() {
+function AdminProductList() {
   const [deleteProductMutation] = useMutation(REMOVE_PRODUCTS);
 
   const { loading, error, data } = useQuery(GET_PRODUCTS);
@@ -68,7 +68,7 @@ console.log(e.target.value);
                 <Card.Text className='fs-5 text-white'>
                   ${product.price}
                 </Card.Text>
-                <Card.Img variant="top" src={`/images/${product.image}`} />
+                <Card.Img variant="top" src={product.image} />
                 <Card.Body>
                   <Card.Text className='fs-6 text-white'>
                     {product.description}
@@ -100,4 +100,4 @@ console.log(e.target.value);
 }
 
 
-export default ProductList;
+export default AdminProductList;

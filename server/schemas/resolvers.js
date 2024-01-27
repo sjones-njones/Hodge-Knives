@@ -32,6 +32,12 @@ const resolvers = {
     product: async (_, { productId }) => {
       return Product.findOne({ _id: productId });
     },
+    archiveProducts: async () => {
+      return Product.find({"category":"Archive"});
+    },
+    availableProducts: async () => {
+      return Product.find({"category":"Available"});
+    },
     users: async () => User.find({}),
   },
   Mutation: {

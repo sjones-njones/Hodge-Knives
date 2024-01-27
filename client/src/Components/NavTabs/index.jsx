@@ -58,7 +58,7 @@ function NavTabs() {
         <Link
           to="/Admin"
           className={currentPage === '/Admin' ? 'nav-link active' : 'nav-link'}
-          >
+          >Admin
                   </Link>
       </li>
         </ul>
