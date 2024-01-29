@@ -9,7 +9,7 @@ import Signup from './Pages/Signup.jsx';
 import Admin from './Pages/Admin.jsx';
 import Detail from './Pages/Detail.jsx';
 import Past from './Pages/Past.jsx';
-
+import UpdateProduct from './Pages/UpdateProduct.jsx';
 import AdminProductList from './Components/AdminProductList';
 // import AddProducts from './Pages/AddProducts.jsx';
 import AdminArchive from './Components/AdminArchive';
@@ -85,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: '/productDeleted',
         element: <ProductDeleted />
+      },
+      {
+        path: '/updateProduct/:id',
+        element: <UpdateProduct />
       },
       // {
       //   path: '/profiles/:profileId',

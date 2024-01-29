@@ -42,7 +42,7 @@ function AdminProductList() {
 
   const { loading, error, data } = useQuery(GET_AVAILABLEPRODUCTS);
   const handleDeleteProduct = (e) => {
-    navigate('/productDeleted', {replace: true});
+    navigate('/productDeleted', { replace: true });
     const { data } = deleteProductMutation({
       variables: { productId: e.target.value }
     });
@@ -50,6 +50,8 @@ function AdminProductList() {
 
   const handleUpdateButton = (e) => {
     console.log(e.target.value);
+    // navigate(`/updateProduct/${product._id}`, {replace: true});
+
   }
   if (loading) {
     return <p>Loading...</p>;
@@ -77,7 +79,10 @@ function AdminProductList() {
                 </Card.Body>
                 <Button value={product._id} className='btn hover m-1 w-100  btn-warning text-dark fs-5' onClick={handleDeleteProduct}
                 >Delete Product</Button>
-                <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' onClick={handleUpdateButton}>Update Product</Button>
+                <Link className='links' to={`/updateProduct/${product._id}`}>
+                  <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' >Update Product</Button>
+
+                </Link>
               </Card>
             </Col>
           ))}
