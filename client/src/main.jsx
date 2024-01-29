@@ -8,6 +8,8 @@ import Home from './Pages/Home.jsx';
 import Signup from './Pages/Signup.jsx';
 import Admin from './Pages/Admin.jsx';
 import Detail from './Pages/Detail.jsx';
+import Past from './Pages/Past.jsx';
+
 import AdminProductList from './Components/AdminProductList';
 // import AddProducts from './Pages/AddProducts.jsx';
 import AdminArchive from './Components/AdminArchive';
@@ -16,6 +18,7 @@ import Login from './Pages/Login.jsx';
 import About from './Pages/About.jsx';
 import Shop from './Pages/Shop.jsx';
 import ProductAdded from './Pages/ProductAdded.jsx'
+import ProductDeleted from './Pages/ProductDeleted.jsx'
 import Care from './Pages/Care.jsx';
 import AdminAddProducts from './Components/AdminAddProducts';
 import AdminUpdateProduct from './Pages/AdminUpdateProduct.jsx';
@@ -67,6 +70,10 @@ const router = createBrowserRouter([
         path: '/Shop',
         element: <Shop />
       },
+      {
+        path: '/Past',
+        element: <Past />
+      },
      {
         path: '/products/:id',
         element: <Detail />
@@ -74,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: '/productAdded',
         element: <ProductAdded />
+      },
+      {
+        path: '/productDeleted',
+        element: <ProductDeleted />
       },
       // {
       //   path: '/profiles/:profileId',

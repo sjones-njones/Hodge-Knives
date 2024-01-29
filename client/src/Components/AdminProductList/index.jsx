@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 // import ProductItem from '../ProductItem/index';
 import { useStoreContext } from '../../../utils/GlobalState';
@@ -15,16 +15,16 @@ import { Card, Row, Col, Container, Button } from "react-bootstrap";
 // import { name } from '@cloudinary/url-gen/actions/namedTransformation';
 import { useMutation } from '@apollo/client';
 
-const GET_PRODUCTS = gql`
-query Products {
-  products {
+const GET_AVAILABLEPRODUCTS = gql`
+query ProductsAvailable {
+  productsAvailable {
     _id
     name
     description
     price
     quantity
     image
-    category 
+    category
   }
 }
 `;
@@ -37,18 +37,19 @@ mutation RemoveProduct($productId: ID!) {
 `
 
 function AdminProductList() {
+  const navigate = useNavigate();
   const [deleteProductMutation] = useMutation(REMOVE_PRODUCTS);
 
-  const { loading, error, data } = useQuery(GET_PRODUCTS);
+  const { loading, error, data } = useQuery(GET_AVAILABLEPRODUCTS);
   const handleDeleteProduct = (e) => {
-    console.log(e.target.value);
+    navigate('/productDeleted', {replace: true});
     const { data } = deleteProductMutation({
       variables: { productId: e.target.value }
     });
   }
 
   const handleUpdateButton = (e) => {
-console.log(e.target.value);
+    console.log(e.target.value);
   }
   if (loading) {
     return <p>Loading...</p>;
@@ -61,7 +62,7 @@ console.log(e.target.value);
     <div>
       <div>
         <Row xs={12} sm={8} md={3} lg={4} className="g-4 mt-2">
-          {data.products.map((product) => (
+          {data.productsAvailable.map((product) => (
             <Col key={product._id}>
               <Card className='border-warning hover bg-black h-100'>
                 <Card.Title className='fs-3 text-white'>{product.name}</Card.Title>
@@ -76,11 +77,7 @@ console.log(e.target.value);
                 </Card.Body>
                 <Button value={product._id} className='btn hover m-1 w-100  btn-warning text-dark fs-5' onClick={handleDeleteProduct}
                 >Delete Product</Button>
-                {/* <Link to={ `/Admin/Inventory/Update/${_id}`
-                } key={product._id}
-                  > */}
-                  <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' onClick={handleUpdateButton}>Update Product</Button>
-                {/* </Link> */}
+                <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' onClick={handleUpdateButton}>Update Product</Button>
               </Card>
             </Col>
           ))}

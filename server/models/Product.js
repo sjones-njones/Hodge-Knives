@@ -25,7 +25,7 @@ const productSchema = new Schema({
     min: 0.99
   },
   category: {
-    type: String,
+    type: String
   },
 });
 
