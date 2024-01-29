@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-// import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 
 const ProductAdded = () => {
-  // const { width, height } = useWindowSize()
   return (
     <div>
       <h1 className="text-white m-5">
