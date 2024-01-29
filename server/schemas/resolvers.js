@@ -4,39 +4,17 @@ const { signToken } = require("../utils/jwt");
 
 const resolvers = {
   Query: {
-    // categories: async () => {
-    // return await Category.find();
-    // },
-    // products: async (_, { category, name }) => {
-    //   const params = {};
-
-    //   if (category) {
-    //     params.category = category;
-    //   }
-
-    //   if (name) {
-    //     params.name = {
-    //       $regex: name,
-    //     };
-    //   }
-
-    //   return Product.find(params).populate("category");
-    // },
-
-    // product: async (_, { _id }) => {
-    //   return await Product.findById(_id).populate('category');
-    // },
     products: async () => {
       return Product.find();
     },
+    productsAvailable: async () => {
+      return Product.find({ category: "Available" });
+    },
+    productsArchive: async () => {
+      return Product.find({ category: "Archive" });
+    },
     product: async (_, { productId }) => {
       return Product.findOne({ _id: productId });
-    },
-    archiveProducts: async () => {
-      return Product.find({"category":"Archive"});
-    },
-    availableProducts: async () => {
-      return Product.find({"category":"Available"});
     },
     users: async () => User.find({}),
   },

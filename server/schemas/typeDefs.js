@@ -30,8 +30,8 @@ const typeDefs = `
   
    type Query {
     products: [Product]!
-    availableProducts(category: String!): [Product]!
-    archiveProducts(category: String!): [Product]!
+    productsAvailable: [Product]!
+    productsArchive: [Product]!
     product(productId: ID!): Product
     user: User
     users: [User]

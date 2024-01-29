@@ -14,9 +14,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Row, Col, Container } from "react-bootstrap";
 // import { name } from '@cloudinary/url-gen/actions/namedTransformation';
 
-const GET_AVAILABLEPRODUCTS = gql`
-query ProductsAvailable {
-  productsAvailable {
+const GET_ARCHIVEPRODUCTS = gql`
+query ProductsArchive {
+  productsArchive {
     _id
     name
     description
@@ -30,7 +30,7 @@ query ProductsAvailable {
 
 
 
-function ProductList(item) {
+function ArchiveProductList(item) {
   const {
     image,
     name,
@@ -39,7 +39,7 @@ function ProductList(item) {
 
 
 
-  const { loading, error, data } = useQuery(GET_AVAILABLEPRODUCTS);
+  const { loading, error, data } = useQuery(GET_ARCHIVEPRODUCTS);
 
   // const [data, setProduct] = useState([]);
 
@@ -58,8 +58,8 @@ console.log(data);
   return (
     <div>
       <Row xs={12} sm={8} md={3} lg={4} className="m-1 g-4">
-        {data.productsAvailable.map((product) => (
-          <Col className="mx-auto"key={product._id} _id={product._id}
+        {data.productsArchive.map((product) => (
+          <Col key={product._id} _id={product._id}
           >
             <Link className='links' to={`/products/${product._id}`}>
               <Card className='border-warning hover bg-black h-100'>
@@ -80,4 +80,4 @@ console.log(data);
 }
 
 
-export default ProductList;
+export default ArchiveProductList;
