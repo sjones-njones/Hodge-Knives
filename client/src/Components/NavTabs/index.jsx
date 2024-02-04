@@ -4,7 +4,9 @@ function NavTabs() {
   const currentPage = useLocation().pathname;
   return (
     <>
+    <Link to='/'>
     <img src={Logo} alt="Hodge Knives Logo" style={{ width: 200, height: 200 }} />    
+        </Link>
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <Link

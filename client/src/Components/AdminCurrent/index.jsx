@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -53,6 +54,8 @@ function AdminProductList() {
     // navigate(`/updateProduct/${product._id}`, {replace: true});
 
   }
+
+  
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -83,6 +86,7 @@ function AdminProductList() {
                   <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' >Update Product</Button>
 
                 </Link>
+                
               </Card>
             </Col>
           ))}
@@ -92,7 +96,10 @@ function AdminProductList() {
 
 
       <Link to="/Admin">
-        <button className='btn btn-lg btn-warning m-3'>Back to Admin Page</button>
+        <button className='btn btn-warning btn-lg m-2 mt-4 w-25 fs-4'>Back to Admin Page</button>
+      </Link>
+      <Link to="/">
+        <button type="button" className="btn btn-warning mt-4 btn-lg m-2 w-25 fs-4">Home</button>
       </Link>
 
 

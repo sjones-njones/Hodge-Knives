@@ -10,8 +10,7 @@ import Admin from './Pages/Admin.jsx';
 import Detail from './Pages/Detail.jsx';
 import Past from './Pages/Past.jsx';
 import UpdateProduct from './Pages/UpdateProduct.jsx';
-import AdminProductList from './Components/AdminProductList';
-// import AddProducts from './Pages/AddProducts.jsx';
+import AdminCurrent from './Components/AdminCurrent';
 import AdminArchive from './Components/AdminArchive';
 import Login from './Pages/Login.jsx';
 // import ErrorPage from './pages/Error';
@@ -21,7 +20,7 @@ import ProductAdded from './Pages/ProductAdded.jsx'
 import ProductDeleted from './Pages/ProductDeleted.jsx'
 import Care from './Pages/Care.jsx';
 import AdminAddProducts from './Components/AdminAddProducts';
-import AdminUpdateProduct from './Pages/AdminUpdateProduct.jsx';
+import AdminUpdateProduct from './Pages/UpdateProduct.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,10 +33,11 @@ const router = createBrowserRouter([
       }, {
         path: '/login',
         element: <Login />
-      }, {
-        path: '/signup',
-        element: <Signup />
       },
+      //  {
+      //   path: '/signup',
+      //   element: <Signup />
+      // },
       {
         path: '/About',
         element: <About />
@@ -47,18 +47,18 @@ const router = createBrowserRouter([
         element: <Admin />
       },
       {
-        path: '/Admin/Inventory',
-        element: <AdminProductList />
+        path: '/Admin/AdminCurrentInventory',
+        element: <AdminCurrent />
+      },
+      {
+        path: '/Admin/AdminArchiveInventory',
+        element: <AdminArchive />
       },
       {
         path: '/Admin/Inventory/Update/:id',
         element: <AdminUpdateProduct />
       },
-      {
-        path: '/Admin/Archive',
-        element: <AdminArchive />
-      },
-      {
+          {
         path: '/Admin/AddProducts',
         element: <AdminAddProducts />
       },
