@@ -1,41 +1,9 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-
-// import ProductItem from '../ProductItem/index';
-import { useStoreContext } from '../../../utils/GlobalState';
-// import { UPDATE_PRODUCTS } from '../../../utils/actions';
+import { Link, useNavigate } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-// import { QUERY_PRODUCTS } from '../../../utils/queries';
-// import { idbPromise } from '../../../utils/helpers';
-// import spinner from '../../assets/spinner.gif';
-import { gql } from "@apollo/client";
-import Maker from '../../assets/images/makerPic.png';
+import { GET_ARCHIVEPRODUCTS, REMOVE_PRODUCTS } from '../../../utils/queries';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Row, Col, Container, Button } from "react-bootstrap";
-// import { name } from '@cloudinary/url-gen/actions/namedTransformation';
+import { Card, Row, Col, Button } from "react-bootstrap";
 import { useMutation } from '@apollo/client';
-
-const GET_ARCHIVEPRODUCTS = gql`
-query ProductsArchive {
-  productsArchive {
-    _id
-    name
-    description
-    price
-    quantity
-    image
-    category
-  }
-}
-`;
-
-const REMOVE_PRODUCTS = gql`
-mutation RemoveProduct($productId: ID!) {
-  removeProduct(productId: $productId) {
-    name
-  }
-}
-`
 
 function AdminArchive() {
   const navigate = useNavigate();
@@ -84,15 +52,12 @@ function AdminArchive() {
           ))}
         </Row>
       </div>
-
-
-
       <Link to="/Admin">
-        <button className='btn btn-lg btn-warning m-3'>Back to Admin Page</button>
+        <button className='btn btn-warning btn-lg m-2 mt-4 w-25 fs-4'>Back to Admin Page</button>
       </Link>
-
-
-
+      <Link to="/">
+        <button type="button" className="btn btn-warning mt-4 btn-lg m-2 w-25 fs-4">Home</button>
+      </Link>
     </div>
   );
 }
