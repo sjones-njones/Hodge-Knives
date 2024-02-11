@@ -1,34 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-
-// import ProductItem from '../ProductItem/index';
-import { useStoreContext } from '../../../utils/GlobalState';
-// import { UPDATE_PRODUCTS } from '../../../utils/actions';
 import { useQuery } from '@apollo/client';
-// import { GET_AVAILABLEPRODUCTS } from '../../../utils/queries';
-// import { idbPromise } from '../../../utils/helpers';
-// import spinner from '../../assets/spinner.gif';
-import { gql } from "@apollo/client";
-import Maker from '../../assets/images/makerPic.png';
+import { GET_ARCHIVEPRODUCTS } from '../../../utils/queries';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Row, Col, Container } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 // import { name } from '@cloudinary/url-gen/actions/namedTransformation';
-
-const GET_ARCHIVEPRODUCTS = gql`
-query ProductsArchive {
-  productsArchive {
-    _id
-    name
-    description
-    price
-    quantity
-    image
-    category
-  }
-}
-`;
-
-
 
 function ArchiveProductList(item) {
   const {
@@ -36,8 +12,6 @@ function ArchiveProductList(item) {
     name,
     _id,
   } = item;
-
-
 
   const { loading, error, data } = useQuery(GET_ARCHIVEPRODUCTS);
 

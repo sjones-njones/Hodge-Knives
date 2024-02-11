@@ -23,7 +23,6 @@ const typeDefs = `
     image: String
     image2: String
     image3: String
-    quantity: Int
     price: Float
     category: String
   }
@@ -42,7 +41,15 @@ const typeDefs = `
     signup(name: String!, email: String!, password: String!): Auth
     addProduct(name: String!, category: String!, description: String!, price: Int!, image: String!, image2: String, image3: String): Product
     removeProduct(productId: ID!): Product
-    updateProduct(productId: ID!, name: String!): Product
+    updateProductCategory(id: ID!, category: String!): Product
+    updateProductName(id: ID!, name: String!): Product
+    updateProductDescription (id: ID!, description: String!): Product
+    updateProductImage(id: ID!, image: String!): Product
+    updateProductSecondImage(id: ID!, image2: String!): Product
+    updateProductThirdImage(id: ID!, image3: String!): Product
+    updateProductPrice(id: ID!, price: Int!): Product
+
+
   }
 `;
 

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useStoreContext } from '../../../utils/GlobalState';
 // import { UPDATE_PRODUCTS } from '../../../utils/actions';
 import { useQuery } from '@apollo/client';
-// import { GET_AVAILABLEPRODUCTS } from '../../../utils/queries';
+import { GET_AVAILABLEPRODUCTS } from '../../../utils/queries';
 // import { idbPromise } from '../../../utils/helpers';
 // import spinner from '../../assets/spinner.gif';
 import { gql } from "@apollo/client";
@@ -13,22 +13,6 @@ import Maker from '../../assets/images/makerPic.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Row, Col, Container } from "react-bootstrap";
 // import { name } from '@cloudinary/url-gen/actions/namedTransformation';
-
-const GET_AVAILABLEPRODUCTS = gql`
-query ProductsAvailable {
-  productsAvailable {
-    _id
-    name
-    description
-    price
-    quantity
-    image
-    category
-  }
-}
-`;
-
-
 
 function ProductList(item) {
   const {

@@ -14,6 +14,105 @@ query Product($productId: ID!) {
   }
 }
 `;
+export const UPDATEPRODUCTCATEGORY = gql` 
+mutation updateProductCategory(
+  $updateProductId: ID!, 
+  $category: String!) 
+  {
+    updateProductCategory(
+    id: $updateProductId, 
+    category: $category) 
+    {
+    category
+    _id
+  }
+}
+`
+export const UPDATEPRODUCTNAME = gql` 
+mutation updateProductName(
+  $updateProductId: ID!, 
+  $name: String!) 
+  {
+    updateProductName(
+    id: $updateProductId, 
+    name: $name) 
+    {
+    name
+    _id
+  }
+}
+`
+export const UPDATEPRODUCTDESCRIPTION = gql` 
+mutation updateProductDescription(
+  $updateProductId: ID!, 
+  $description: String!) 
+  {
+    updateProductDescription(
+    id: $updateProductId, 
+    description: $description) 
+    {
+      description
+    _id
+  }
+}
+`
+export const UPDATEPRODUCTIMAGE = gql` 
+mutation updateProductImage(
+  $updateProductId: ID!, 
+  $image: String!) 
+  {
+    updateProductImage(
+    id: $updateProductId, 
+    image: $image) 
+    {
+      image
+    _id
+  }
+}
+`
+export const UPDATEPRODUCTSECONDIMAGE = gql` 
+mutation updateProductSecondImage(
+  $updateProductId: ID!, 
+  $image2: String!) 
+  {
+    updateProductSecondImage(
+    id: $updateProductId, 
+    image2: $image2) 
+    {
+      image2
+    _id
+  }
+}
+`
+export const UPDATEPRODUCTTHIRDIMAGE = gql` 
+mutation updateProductThirdImage(
+  $updateProductId: ID!, 
+  $image3: String!) 
+  {
+    updateProductThirdImage(
+    id: $updateProductId, 
+    image3: $image3) 
+    {
+      image3
+    _id
+  }
+}
+`
+export const UPDATEPRODUCTPRICE = gql` 
+mutation updateProductPrice(
+  $updateProductId: ID!, 
+  $price: Int!) 
+  {
+    updateProductPrice(
+    id: $updateProductId, 
+    price: $price) 
+    {
+      price
+    _id
+  }
+}
+`
+
 export const GET_AVAILABLEPRODUCTS = gql`
 query ProductsAvailable {
   productsAvailable {
@@ -21,7 +120,6 @@ query ProductsAvailable {
     name
     description
     price
-    quantity
     image
     image2
     image3
@@ -29,6 +127,29 @@ query ProductsAvailable {
   }
 }
 `;
+export const ADDPRODUCTS = gql`
+mutation AddProduct(
+  $name: String!,
+  $category: String!,
+  $description: String!,
+  $price: Int!,
+  $image: String!,
+  $image2: String, 
+  $image3: String) 
+  {
+  addProduct(
+    name: $name,
+    category: $category,
+    description: $description,
+    price: $price,
+    image: $image,
+    image2: $image2, 
+    image3: $image3) 
+    {
+ name
+}
+}
+`
 export const REMOVE_PRODUCTS = gql`
 mutation RemoveProduct($productId: ID!) {
   removeProduct(productId: $productId) {
@@ -43,7 +164,6 @@ query ProductsArchive {
     name
     description
     price
-    quantity
     image
     image2
     image3
@@ -59,7 +179,6 @@ query Products {
     name
     description
     price
-    quantity
     image
     image2
     image3
@@ -67,6 +186,7 @@ query Products {
   }
 }
 `;
+
 // export const GET_AVAILABLEPRODUCTS = gql`
 // query AvailableProducts {
 //   availableProducts {
@@ -76,7 +196,6 @@ query Products {
 //     image
 //     image2
 //     image3
-//     quantity
 //     price
 //     category
 //   }
@@ -90,7 +209,6 @@ query Products {
 //       name
 //       description
 //       price
-//       quantity
 //       image
 //       category {
 //         _id
@@ -114,7 +232,6 @@ query Products {
 //       name
 //       description
 //       price
-//       quantity
 //       category {
 //         name
 //       }
@@ -144,7 +261,6 @@ export const QUERY_USER = gql`
           name
           description
           price
-          quantity
           image
         }
       }
@@ -155,8 +271,8 @@ export const QUERY_USER = gql`
 
 
 
-     
-     
+
+
 
 
 

@@ -44,9 +44,13 @@ function AdminArchive() {
                     {product.description}
                   </Card.Text>
                 </Card.Body>
+                <Link className='links' to={`/updateProduct/${product._id}`}>
+                  <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' >Update Product</Button>
+                </Link>
+                
                 <Button value={product._id} className='btn hover m-1 w-100  btn-warning text-dark fs-5' onClick={handleDeleteProduct}
                 >Delete Product</Button>
-                <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' onClick={handleUpdateButton}>Update Product</Button>
+                
               </Card>
             </Col>
           ))}
