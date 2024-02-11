@@ -1,41 +1,10 @@
 
-import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-
-// import ProductItem from '../ProductItem/index';
-import { useStoreContext } from '../../../utils/GlobalState';
-// import { UPDATE_PRODUCTS } from '../../../utils/actions';
+import { Link, useNavigate } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-// import { QUERY_PRODUCTS } from '../../../utils/queries';
-// import { idbPromise } from '../../../utils/helpers';
-// import spinner from '../../assets/spinner.gif';
-import { gql } from "@apollo/client";
-import Maker from '../../assets/images/makerPic.png';
+import { GET_AVAILABLEPRODUCTS, REMOVE_PRODUCTS } from '../../../utils/queries';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Row, Col, Container, Button } from "react-bootstrap";
-// import { name } from '@cloudinary/url-gen/actions/namedTransformation';
+import { Card, Row, Col, Button } from "react-bootstrap";
 import { useMutation } from '@apollo/client';
-
-const GET_AVAILABLEPRODUCTS = gql`
-query ProductsAvailable {
-  productsAvailable {
-    _id
-    name
-    description
-    price
-    quantity
-    image
-    category
-  }
-}
-`;
-const REMOVE_PRODUCTS = gql`
-mutation RemoveProduct($productId: ID!) {
-  removeProduct(productId: $productId) {
-    name
-  }
-}
-`
 
 function AdminProductList() {
   const navigate = useNavigate();
@@ -48,14 +17,7 @@ function AdminProductList() {
       variables: { productId: e.target.value }
     });
   }
-
-  const handleUpdateButton = (e) => {
-    console.log(e.target.value);
-    // navigate(`/updateProduct/${product._id}`, {replace: true});
-
-  }
-
-  
+ 
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -80,30 +42,24 @@ function AdminProductList() {
                     {product.description}
                   </Card.Text>
                 </Card.Body>
-                <Button value={product._id} className='btn hover m-1 w-100  btn-warning text-dark fs-5' onClick={handleDeleteProduct}
-                >Delete Product</Button>
                 <Link className='links' to={`/updateProduct/${product._id}`}>
                   <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' >Update Product</Button>
-
                 </Link>
+                
+                <Button value={product._id} className='btn hover m-1 w-100  btn-warning text-dark fs-5' onClick={handleDeleteProduct}
+                >Delete Product</Button>
                 
               </Card>
             </Col>
           ))}
         </Row>
       </div>
-
-
-
       <Link to="/Admin">
-        <button className='btn btn-warning btn-lg m-2 mt-4 w-25 fs-4'>Back to Admin Page</button>
+        <button className="w-50 fs-3 m-2 btn btn-warning btn-block">Back to Admin Page</button>
       </Link>
       <Link to="/">
-        <button type="button" className="btn btn-warning mt-4 btn-lg m-2 w-25 fs-4">Home</button>
+      <button className="w-50 fs-3 m-2 btn btn-warning btn-block">Home</button>
       </Link>
-
-
-
     </div>
   );
 }

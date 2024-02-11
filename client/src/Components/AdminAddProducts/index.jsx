@@ -2,30 +2,8 @@ import React from "react";
 import {Link, Routes, Route, useNavigate} from 'react-router-dom';
 import { useMutation, gql } from "@apollo/client";
 import { Button } from "react-bootstrap";
+import { ADDPRODUCTS } from '../../../utils/queries';
 
-const ADDPRODUCTS = gql`
-mutation AddProduct(
-  $name: String!,
-  $category: String!,
-  $description: String!,
-  $price: Int!,
-  $image: String!,
-  $image2: String, 
-  $image3: String) 
-  {
-  addProduct(
-    name: $name,
-    category: $category,
-    description: $description,
-    price: $price,
-    image: $image,
-    image2: $image2, 
-    image3: $image3) 
-    {
- name
-}
-}
-`
 const AdminAddProducts = () => {
   const navigate = useNavigate();
   const [name, setName] = React.useState("");
