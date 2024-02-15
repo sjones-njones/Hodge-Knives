@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { gql } from "@apollo/client";
 import Carousel from 'react-bootstrap/Carousel';
-import { Card, Row, Col, Container, Button } from "react-bootstrap";
+import { Card, Ratio, Image, Row, Col, Container, Button } from "react-bootstrap";
 
 import { Link, useParams, Route, Routes } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
@@ -34,14 +34,22 @@ function SingleProductDetail() {
 
         <Carousel className='mx-auto'>
           <Carousel.Item>
-            <img className="col-sm-6" src={currentProduct.image} alt={currentProduct.name} />
+            <Image
+              fluid
+              width="50%"
+              className="" src={currentProduct.image} alt={currentProduct.name} />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="col-sm-6" src={currentProduct.image2} alt={currentProduct.name} />
-
+            <Image
+              fluid
+              width="50%"
+              className="" src={currentProduct.image2} alt={currentProduct.name} />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="col-sm-6" src={currentProduct.image3} alt={currentProduct.name} />
+            <Image
+              fluid
+              width="50%"
+              className="" src={currentProduct.image3} alt={currentProduct.name} />
           </Carousel.Item>
         </Carousel>
       </div>
@@ -52,7 +60,7 @@ function SingleProductDetail() {
         </div>
         <h2 className='mt-5 text-white'>${currentProduct.price}</h2>
       </div>
-    
+
     </div>
 
 

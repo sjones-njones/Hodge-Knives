@@ -64,7 +64,7 @@ const ProductUpdate = () => {
     const dataSecondImage = await changeSecondImage({
       variables: {
         updateProductId: id,
-        image2: image2
+        image2: secondImage
       },
     });
     setSecondImage("");
@@ -74,7 +74,7 @@ const ProductUpdate = () => {
     const dataThirdImage = await changeThirdImage({
       variables: {
         updateProductId: id,
-        image3: image3
+        image3: thirdImage
       },
     });
     setThirdImage("");

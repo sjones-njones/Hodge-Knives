@@ -30,9 +30,9 @@ function Detail() {
 <SingleProductDetail />
       <div className='m-3'>
         <Link to={`/Shop`}>
-          <Button className=' btn m-2 w-25 hover btn-warning text-dark fs-5'>Back to Shop</Button>
+          <Button className=' btn m-2 hover btn-warning text-dark fs-5'>Back to Shop</Button>
         </Link>
-        <Button className='btn w-25 m-2 hover btn-warning text-dark fs-5'>Add to Cart</Button>
+        <Button className='btn m-2 hover btn-warning text-dark fs-5'>Add to Cart</Button>
       </div>
     </div>
     ) 

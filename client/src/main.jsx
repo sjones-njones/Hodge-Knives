@@ -13,6 +13,7 @@ import UpdateProduct from './Pages/UpdateProduct.jsx';
 import AdminCurrent from './Components/AdminCurrent';
 import AdminArchive from './Components/AdminArchive';
 import Login from './Pages/Login.jsx';
+import Contact from './Pages/Contact.jsx';
 // import ErrorPage from './pages/Error';
 import About from './Pages/About.jsx';
 import Shop from './Pages/Shop.jsx';
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/About',
         element: <About />
+      },
+      {
+        path: '/Contact',
+        element: <Contact />
       },
       {
         path: '/Admin',
