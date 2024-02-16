@@ -1,7 +1,7 @@
 import React from "react";
 import {Link, Routes, Route, useNavigate} from 'react-router-dom';
 import { useMutation, gql } from "@apollo/client";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { ADDPRODUCTS } from '../../../utils/queries';
 
 const AdminAddProducts = () => {
@@ -64,10 +64,11 @@ const AdminAddProducts = () => {
   }
 
   return (
+    <Container>
     <div className="row justify-content-center">
-      <form className="mt-3 w-50" onSubmit={handleOnSubmit}>
+      <form className="mt-3" onSubmit={handleOnSubmit}>
         <div className=" m-4 form-group">
-          <label className="label d-block text-white" htmlFor="name">Enter Product Name</label>
+          <label className="label d-block text-white" htmlFor="name">Name</label>
           <input
             className="text-left w-100 rounded"
             type="text"
@@ -78,7 +79,7 @@ const AdminAddProducts = () => {
           />
         </div>
         <div className=" m-4 form-group">
-          <label className="label d-block text-white" htmlFor="description">Enter Product Description</label>
+          <label className="label d-block text-white" htmlFor="description">Description</label>
           <textarea className="w-100 form-control" id="description" rows="3"
             name="description"
             value={description}
@@ -88,7 +89,7 @@ const AdminAddProducts = () => {
         </div>
 
         <div className=" m-4 form-group">
-          <label className="label d-block text-white" htmlFor="image">Enter Main Image URL</label>
+          <label className="label d-block text-white" htmlFor="image">Main Image</label>
           <input
             className="rounded w-100"
             type="text"
@@ -99,7 +100,7 @@ const AdminAddProducts = () => {
           />
         </div>
         <div className=" m-4 form-group">
-          <label className="label d-block text-white" htmlFor="image">Enter 2nd Image URL </label>
+          <label className="label d-block text-white" htmlFor="image">2nd Image</label>
           <input
             className="rounded w-100"
             type="text"
@@ -110,7 +111,7 @@ const AdminAddProducts = () => {
           />
         </div>
         <div className=" m-4 form-group">
-          <label className="label d-block text-white" htmlFor="image">Enter 3rd Image URL </label>
+          <label className="label d-block text-white" htmlFor="image">3rd Image</label>
           <input
             className="rounded w-100"
             type="text"
@@ -121,7 +122,7 @@ const AdminAddProducts = () => {
           />
         </div>
         <div className=" m-4 form-group">
-          <label className="label d-block text-white" htmlFor="price">Enter Product Price ($ Amount Only)</label>
+          <label className="label d-block text-white" htmlFor="price">Price ($ Amount Only)</label>
           <input
             className="rounded w-100"
             type="integer"
@@ -136,7 +137,7 @@ const AdminAddProducts = () => {
 
         </div>
         <div className="m-4 form-group">
-          <label className="label d-block text-white" htmlFor="image">Select A Category</label>
+          <label className="label d-block text-white" htmlFor="image">Category</label>
           <select className="rounded form-control" id="category"
             value={category}
             onChange={handleCategoryOnChange}>
@@ -145,12 +146,14 @@ const AdminAddProducts = () => {
             <option className="text-black fs-5" value="Archive">Archive</option>
           </select>
         </div>
-        <Button type="submit" className="btn btn-warning btn-lg btn-secondary m-2 w-50">Add Product</Button>
+        <Button type="submit" className="btn btn-warning btn-lg btn-secondary m-2">Add Product</Button>
       </form>
         <Link to="/Admin">
-          <button type="button" className="btn btn-warning btn-lg btn-secondary m-2 w-25">Back</button>
+          <button type="button" className="btn btn-warning btn-lg btn-secondary m-2">Back</button>
         </Link>
     </div>
+    </Container>
+
   );
 };
 
