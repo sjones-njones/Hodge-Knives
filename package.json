@@ -7,7 +7,7 @@
     "install": "cd client && npm install && cd ../server && npm install",
     "build": "cd client && npm run build",
     "start": "cd server && npm run start",
-    "dev": "concurrently -n client,server \"cd client && npm run dev\" \"cd server && npm run dev\"",
+    "dev": "concurrently -n client,server \"cd client && npm run dev && email dev\" \"cd server && npm run dev\"",
     "lint": "eslint .",
     "seed": "node ./server/config/seeds.js",
     "lint:fix": "eslint . --fix"
@@ -21,16 +21,28 @@
   "dependencies": {
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.14.0",
+    "@emailjs/browser": "^4.1.0",
+    "@react-email/button": "^0.0.13",
+    "@react-email/components": "0.0.14",
+    "@react-email/html": "^0.0.7",
+    "@react-email/render": "^0.0.12",
+    "axios": "^1.6.7",
     "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "eslint-config-wesbos": "^4.0.1",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
+    "mailgun-js": "^0.6.7",
     "nodemailer": "^6.9.9",
     "react-bootstrap": "^2.9.0-beta.1",
     "react-confetti": "^6.1.0",
+    "react-email": "2.1.0",
     "react-grid-layout": "^1.4.4",
-    "react-router-dom": "^6.20.1"
+    "react-router-dom": "^6.20.1",
+    "resend": "^3.2.0",
+    "vite-plugin-node-polyfills": "^0.21.0"
   }
 }

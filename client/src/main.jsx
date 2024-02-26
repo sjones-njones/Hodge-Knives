@@ -13,7 +13,7 @@ import UpdateProduct from './Pages/UpdateProduct.jsx';
 import AdminCurrent from './Components/AdminCurrent';
 import AdminArchive from './Components/AdminArchive';
 import Login from './Pages/Login.jsx';
-import Contact from './Pages/Contact.jsx';
+// import Contact from './Pages/Contact.jsx';
 // import ErrorPage from './pages/Error';
 import About from './Pages/About.jsx';
 import Shop from './Pages/Shop.jsx';
@@ -22,6 +22,7 @@ import ProductDeleted from './Pages/ProductDeleted.jsx'
 import Care from './Pages/Care.jsx';
 import AdminAddProducts from './Components/AdminAddProducts';
 import AdminUpdateProduct from './Pages/UpdateProduct.jsx';
+import Contact from './Pages/Contact.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,10 +44,10 @@ const router = createBrowserRouter([
         path: '/About',
         element: <About />
       },
-      {
-        path: '/Contact',
-        element: <Contact />
-      },
+      // {
+      //   path: '/Contact',
+      //   element: <Contact />
+      // },
       {
         path: '/Admin',
         element: <Admin />
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
       //   path: '/profiles/:profileId',
       //   element: <Profile />
       // }
+      {
+        path:'/contact',
+        element: <Contact />
+      }
     ]
   },
 ]);

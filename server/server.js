@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 const path = require("path");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");

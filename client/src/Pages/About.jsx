@@ -1,19 +1,38 @@
 import { Container, Card } from 'react-bootstrap';
 import Maker from '../assets/images/makerPic.png';
+import { useEffect, useState } from "react";
+import '../Home.css';
 const About = () => {
 
   return (
     <div>
-      <Container className='mt-3 '>
-      <Card className="bg-black mx-auto">
-        <Card.Title className='text-white fs-1 mb-3'>About Hodge Knives</Card.Title>
-      <Card.Img className="mx-auto w-50"variant="top" src={Maker} />
-      <Card.Body>
-        <Card.Text className='text-white fs-4'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut a rerum voluptatem repellendus culpa, ipsum eum amet explicabo. Quia eveniet dolore sequi eligendi, nam incidunt vel architecto earum eaque rerum.
-        </Card.Text>
-      </Card.Body>
-    </Card>
+      <Container className='mt-3'>
+        <Card className="bg-black ">
+          <Card.Title className='text-white fs-1 mb-3'>About the Blacksmith</Card.Title>
+          <Card.Img className="mx-auto sizingImg" variant="top" src={Maker} />
+          <Card.Body>
+            <Card.Text className='text-white mx-auto text-start sizingText fs-4'>
+              <p className='text-center'>
+                Welcome to Hodge-Knives!!!</p>
+              <p>
+                I'm a custom knife maker from Gonzales, LA. I started knife making in 2011. Driven by my a love for knives, the desire to build something, and the lack of funds needed to buy the knives I really wanted, I set out in an attempt to make my own. After some time and a ton of elbow grease, I started to make knives that got attention from those around me.
+              </p>
+              <p> Since day one I've been working to make the nicest knives I could make, making small improvements to my process along the way.
+              </p>
+              <p>
+
+                I'm extremely proud of the knives that leave my shop. Anyone who's into knives and wants something unique should consider Hodge-Knives!
+              </p>
+              <p>
+
+                Don't see anything that suits you? I also make custom knives upon request with a 1+ month lead time for those who don't mind waiting.
+                </p>
+                <p>
+                 Feel free to contact me.
+              </p>
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </Container>
 
     </div>

@@ -12,6 +12,7 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "@apollo/client": "^3.8.8",
+    "axios": "^0.27.2",
     "@vitejs/plugin-react": "^4.2.0",
     "graphql": "^16.8.1",
     "react": "^18.2.0",
