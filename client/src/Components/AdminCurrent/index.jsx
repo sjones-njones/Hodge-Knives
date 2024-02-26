@@ -50,13 +50,7 @@ function AdminProductList() {
                 >Delete Product</Button>
                 
               </Card>
-              <html>
-    <img src="https://www.imgur.com/XV8ET4Y"/>
-</html>
-<html>
-    <img src="//imgur.com/a/XV8ET4Y"/>
-</html>
-            </Col>
+               </Col>
           ))}
         </Row>
       </div>
