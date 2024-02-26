@@ -42,3 +42,25 @@
 .read-the-docs {
   color: white;
 } */
+
+@media (min-width: 578px){
+  .sizingImg { 
+    width: 75%;
+    
+  }
+  .sizingText { 
+    width: 60%;
+    
+  }
+
+  .sizingForm { 
+    width: 50%;
+    
+  }
+
+  .toggle {
+    background-color: yellow;
+  }
+
+}
+

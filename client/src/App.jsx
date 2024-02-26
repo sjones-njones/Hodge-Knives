@@ -22,7 +22,7 @@ const App = () => (
   <ApolloProvider client={client}>
     <div>
       <NavTabs />
-      <main className="mx-3 ">
+      <main className="">
         <Outlet />
       </main>
     <Footer />
