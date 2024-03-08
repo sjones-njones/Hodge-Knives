@@ -60,13 +60,13 @@ const Signup = () => {
           <Form.Control   value={name}
         onChange={handleNameOnChange} type="name" name='name' />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
           <Form.Label className='text-white fs-5'>Enter Your Email</Form.Label>
           <Form.Control  value={email}
         onChange={handleEmailOnChange}type="name" name='email' />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
           <Form.Label className='text-white fs-5'>Enter Your Password</Form.Label>
           <Form.Control  value={password}
         onChange={handlePasswordOnChange} type="password" name='password' />
@@ -90,36 +90,7 @@ const Signup = () => {
       />
           </Form>
     </div>
-    {/* <form onSubmit={handleOnSubmit}>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value={name}
-        onChange={handleNameOnChange}
-      />
-      <label htmlFor="name">Enter Your Name</label>
-      <br />
-      <input
-        type="text"
-        id="email"
-        name="email"
-        value={email}
-        onChange={handleEmailOnChange}
-      />
-      <label htmlFor="email">Enter Your Email</label>
-      <br />
-      <input
-        type="password"
-        id="password"
-        name="password"
-        value={password}
-        onChange={handlePasswordOnChange}
-      />
-      <label htmlFor="password">Enter Your Password</label>
-      <br />
-      <button type="submit">Submit</button>
-    </form> */}
+   
     </div>
   );
 };

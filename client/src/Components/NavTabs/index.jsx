@@ -32,7 +32,7 @@ function NavTabs() {
             </Nav>
             <Nav>
               <Nav.Link className='text-black' href="/admin">Admin</Nav.Link>
-              <Nav.Link className='text-black' href="/cart">Cart</Nav.Link>
+              <Nav.Link className='' href="/forge">Cart</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
             </Nav>
             

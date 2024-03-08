@@ -48,6 +48,7 @@ const Login = () => {
     console.log({ email, password });
     const myStuff = giveMeMyStuff(data.data.login.token);
     console.log("🚀 ~ file: Login.jsx:28 ~ handleOnSubmit ~ myStuff:", myStuff);
+    console.log(giveMeMyStuff(data.data.login.token));
     setEmail("");
     setPassword("");
   }
