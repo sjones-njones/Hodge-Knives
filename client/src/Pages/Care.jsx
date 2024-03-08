@@ -3,7 +3,7 @@ const Care = () => {
   return (
     <div>
       <h1 className='m-3 text-white'>How to Care for Your Knife</h1>
-      <div className='mx-auto text-start w-75 card bg-black'>
+      <div className='mx-auto text-start sizingText card bg-black'>
 
         <h3 className='mb-4 fw-bold text-white'> 1. Don’t leave your knives in the kitchen sink.</h3>
         <h4 className="text-white fw-light">

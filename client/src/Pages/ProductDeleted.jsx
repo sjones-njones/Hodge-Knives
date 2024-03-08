@@ -9,10 +9,10 @@ const ProductAdded = () => {
         Product Deleted Successfully
       </h1>
               <Link to="/">
-          <button type="button" className="btn btn-warning btn-lg btn-secondary m-2 w-25 fs-4">Home</button>
+          <button type="button" className="btn btn-warning btn-lg btn-secondary m-2 sizingButton fs-4">Home</button>
         </Link>
         <Link to="/Admin">
-        <button className='btn btn-warning btn-lg m-2 w-25 fs-4'>Back to Admin Page</button>
+        <button className='btn btn-warning btn-lg m-2 sizingButton fs-4'>Back to Admin Page</button>
       </Link>
       <Confetti/>
 
