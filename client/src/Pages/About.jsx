@@ -12,7 +12,7 @@ const About = () => {
           <Card.Img className="mx-auto sizingImg" variant="top" src={Maker} />
           <Card.Body>
             <Card.Text className='text-white mx-auto text-start sizingText fs-4'>
-              <p className='text-center'>
+              <p className='fw-bold text-center'>
                 Welcome to Hodge-Knives!!!</p>
               <p>
                 I'm a custom knife maker from Gonzales, LA. I started knife making in 2011. Driven by my a love for knives, the desire to build something, and the lack of funds needed to buy the knives I really wanted, I set out in an attempt to make my own. After some time and a ton of elbow grease, I started to make knives that got attention from those around me.

@@ -4,22 +4,36 @@ import { GET_ARCHIVEPRODUCTS, REMOVE_PRODUCTS } from '../../../utils/queries';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Row, Col, Button } from "react-bootstrap";
 import { useMutation } from '@apollo/client';
+import "../../Home.css"
+import { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
 
 function AdminArchive() {
-  const navigate = useNavigate();
-  const [deleteProductMutation] = useMutation(REMOVE_PRODUCTS);
+  
+  const [show, setShow] = useState(false);
+const [productId, setId] = useState(null);
+function handlingShowAndId(e) {
+  handleShow(e);
+  handleId(e);
+  console.log(e.target.value)
+}
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+const handleId = (e) => setId(e.target.value);
 
-  const { loading, error, data } = useQuery(GET_ARCHIVEPRODUCTS);
-  const handleDeleteProduct = (e) => {
-    navigate('/productDeleted', {replace: true});
-    const { data } = deleteProductMutation({
-      variables: { productId: e.target.value }
-    });
+const navigate = useNavigate();
+const [deleteProductMutation] = useMutation(REMOVE_PRODUCTS);
+
+const { loading, error, data } = useQuery(GET_ARCHIVEPRODUCTS);
+const handleDeleteProduct = () => {
+  navigate('/productDeleted', { replace: true });
+  const { data } = deleteProductMutation({
+    variables: { productId: productId }
+  });
+
   }
 
-  const handleUpdateButton = (e) => {
-    console.log(e.target.value);
-  }
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -47,20 +61,35 @@ function AdminArchive() {
                 <Link className='links' to={`/updateProduct/${product._id}`}>
                   <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' >Update Product</Button>
                 </Link>
-                
-                <Button value={product._id} className='btn hover m-1 w-100  btn-warning text-dark fs-5' onClick={handleDeleteProduct}
-                >Delete Product</Button>
-                
+
+                <Button value={product._id} variant="btn hover m-1 w-100 btn-warning text-dark fs-5" onClick={handlingShowAndId}>
+                  Delete Product
+                </Button>
+
+                <Modal value={product._id} show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+
+                  </Modal.Header>
+                  <Modal.Body className='fs-5'>Are you sure you want to delete?</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      Close
+                    </Button>
+                    <Button variant="warning" onClick={handleDeleteProduct}>
+                      Delete
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               </Card>
             </Col>
           ))}
         </Row>
       </div>
       <Link to="/Admin">
-        <button className='btn btn-warning btn-lg m-2 mt-4 w-25 fs-4'>Back to Admin Page</button>
+        <button className="sizingButton fs-3 m-2 btn btn-warning btn-block">Back to Admin Page</button>
       </Link>
       <Link to="/">
-        <button type="button" className="btn btn-warning mt-4 btn-lg m-2 w-25 fs-4">Home</button>
+        <button className="sizingButton fs-3 m-2 btn btn-warning btn-block">Home</button>
       </Link>
     </div>
   );

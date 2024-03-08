@@ -1,5 +1,23 @@
 import { gql } from '@apollo/client';
 
+export const OneUser = gql`
+query OneUser($email: String!) {
+  oneUser(email: $email) {
+    email
+    _id
+    name
+    password
+  }
+}
+`;
+export const LOGIN = gql`
+  mutation Login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+    }
+  }
+`;
+
 export const QUERY_PRODUCTS = gql`
 query Product($productId: ID!) {
   product(productId: $productId) {

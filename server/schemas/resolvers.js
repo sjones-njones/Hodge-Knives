@@ -17,6 +17,11 @@ const resolvers = {
       return Product.findOne({ _id: productId });
     },
     users: async () => User.find({}),
+
+    oneUser: async (_, { email }) => {
+      return User.findOne({ email: email });
+    },
+
   },
   Mutation: {
     login: async (_, args) => {
@@ -84,6 +89,7 @@ const resolvers = {
     updateProductPrice: async (_, { id, price }) =>
       Product.findOneAndUpdate({ _id: id }, { price }, { New: true }),
   },
+
 };
 
 

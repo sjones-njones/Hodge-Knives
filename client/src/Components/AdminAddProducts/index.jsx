@@ -65,8 +65,9 @@ const AdminAddProducts = () => {
 
   return (
     <Container>
+      <h2 className="text-white">Enter Your Product Info Below</h2>
     <div className="row justify-content-center">
-      <form className="mt-3" onSubmit={handleOnSubmit}>
+      <form className="sizingForm mt-3" onSubmit={handleOnSubmit}>
         <div className=" m-4 form-group">
           <label className="label d-block text-white" htmlFor="name">Name</label>
           <input
@@ -80,7 +81,7 @@ const AdminAddProducts = () => {
         </div>
         <div className=" m-4 form-group">
           <label className="label d-block text-white" htmlFor="description">Description</label>
-          <textarea className="w-100 form-control" id="description" rows="3"
+          <textarea className="w-100 form-control" id="description" rows="5"
             name="description"
             value={description}
             onChange={handleDescriptionOnChange}
@@ -146,11 +147,11 @@ const AdminAddProducts = () => {
             <option className="text-black fs-5" value="Archive">Archive</option>
           </select>
         </div>
-        <Button type="submit" className="btn btn-warning btn-lg btn-secondary m-2">Add Product</Button>
-      </form>
+        <Button type="submit" className="btn sizingButton btn-warning btn-lg m-2 fs-3">Add Product</Button>
         <Link to="/Admin">
-          <button type="button" className="btn btn-warning btn-lg btn-secondary m-2">Back</button>
+          <Button type="button" className="sizingButton btn btn-warning btn-lg fs-3 m-2">Back</Button>
         </Link>
+      </form>
     </div>
     </Container>
 

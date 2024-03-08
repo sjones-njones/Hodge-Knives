@@ -34,6 +34,7 @@ const typeDefs = `
     product(productId: ID!): Product
     user: User
     users: [User]
+    oneUser(email: String!): User
   }
 
   type Mutation {

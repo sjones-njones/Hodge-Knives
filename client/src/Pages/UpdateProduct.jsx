@@ -5,9 +5,17 @@ import { UPDATEPRODUCTCATEGORY, QUERY_PRODUCTS, UPDATEPRODUCTNAME, UPDATEPRODUCT
 import { useMutation, useQuery } from '@apollo/client';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-
+import "../Home.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductUpdate = () => {
+  const showToastMessage = () => {
+
+    toast("Success!"
+    );
+  };
+
   const { id } = useParams();
   const { data } = useQuery(QUERY_PRODUCTS, {
     variables: { productId: id },
@@ -29,7 +37,6 @@ const ProductUpdate = () => {
   const [changePrice] = useMutation(UPDATEPRODUCTPRICE);
 
   async function handleOnSubmitCategory(event) {
-    event.preventDefault();
     const dataCategory = await changeCategory({
       variables: {
         updateProductId: id,
@@ -50,7 +57,6 @@ const ProductUpdate = () => {
   }
 
   async function handleOnSubmitImage(event) {
-    event.preventDefault();
     const dataImage = await changeImage({
       variables: {
         updateProductId: id,
@@ -60,7 +66,6 @@ const ProductUpdate = () => {
     setImage("");
   }
   async function handleOnSubmitSecondImage(event) {
-    event.preventDefault();
     const dataSecondImage = await changeSecondImage({
       variables: {
         updateProductId: id,
@@ -70,7 +75,6 @@ const ProductUpdate = () => {
     setSecondImage("");
   }
   async function handleOnSubmitThirdImage(event) {
-    event.preventDefault();
     const dataThirdImage = await changeThirdImage({
       variables: {
         updateProductId: id,
@@ -89,7 +93,6 @@ const ProductUpdate = () => {
     setDescription("");
   }
   async function handleOnSubmitPrice(event) {
-    event.preventDefault();
     const dataPrice = await changePrice({
       variables: {
         updateProductId: id,
@@ -129,131 +132,176 @@ const ProductUpdate = () => {
     console.log(event.target.value)
   }
   return (
-    <div className="row justify-content-center">
+    <div className="row sizingUpdateForm justify-content-center">
 
-      <Form className="mx-4 mt-4 mb-2" onSubmit={handleOnSubmitName}>
-        <Row>
-          <Col className="col-2 text-end"> 
-          <Form.Label className="text-white fs-4">Name</Form.Label>
-          </Col>
-          <Col className="col-8">
-            <Form.Group className=" text-start" controlId="name">
-              <Form.Control onChange={handleNameOnChange} type="text" placeholder={currentProduct.name} />
-            </Form.Group>
-          </Col>
-          <Col className="col-2 text-start">
-            <Button type="submit" className="btn btn-warning  w-75 ">Update Name</Button>
-          </Col>
-        </Row>
+      <Form className="sizingUpdateForm px-0" onSubmit={handleOnSubmitName}>
+        <Form.Label className="stylingUpdateLabel text-white fs-4 mb-0">Name</Form.Label>
+        <Form.Group className=" text-start" controlId="name">
+          <Form.Control className="" onChange={handleNameOnChange} type="text" placeholder={currentProduct.name} />
+        </Form.Group>
+        <Button type="submit" onClick={showToastMessage} className="btn stylingUpdateButton btn-warning ">Update Name</Button>
+
+<ToastContainer
+  position='top-center'
+  autoClose={5000}
+  hideProgressBar={true}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme='dark'
+  className="my-toast-container"
+/>
       </Form>
 
-      <Form className="mx-4 my-2" onSubmit={handleOnSubmitDescription}>
-        <Row>
-          <Col className="col-2 text-end"> 
-          <Form.Label className="text-white fs-4">Description</Form.Label>
-          </Col>
-          <Col className="col-8">
-            <Form.Group className=" text-start" controlId="name">
-              <Form.Control onChange={handleDescriptionOnChange} type="text" placeholder={currentProduct.description} />
-            </Form.Group>
-          </Col>
-          <Col className="col-2 text-start">
-            <Button type="submit" className="btn btn-warning w-75 ">Update Description</Button>
-          </Col>
-        </Row>
+      <Form className="sizingUpdateForm px-0" onSubmit={handleOnSubmitDescription}>
+        <Form.Label className="stylingUpdateLabel text-white fs-4 mb-0">Description</Form.Label>
+        <Form.Group className=" text-start" controlId="name">
+          <Form.Control onChange={handleDescriptionOnChange} type="text" placeholder={currentProduct.description} />
+        </Form.Group>
+        <Button type="submit" onClick={showToastMessage} className="btn stylingUpdateButton btn-warning ">Update Description</Button>
+
+        <ToastContainer
+          position='top-center'
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='dark'
+          className="my-toast-container"
+        />
       </Form>
 
-      <Form className="mx-4 my-2" onSubmit={handleOnSubmitImage}>
-        <Row>
-          <Col className="col-2 text-end"> 
-          <Form.Label className="text-white fs-4">Main Image</Form.Label>
-          </Col>
-          <Col className="col-8">
-            <Form.Group className=" text-start" controlId="name">
-              <Form.Control onChange={handleImageOnChange} type="text" placeholder={currentProduct.image} />
-            </Form.Group>
-          </Col>
-          <Col className="col-2 text-start">
-            <Button type="submit" className="btn btn-warning w-75 ">Update Image</Button>
-          </Col>
-        </Row>
+      <Form className="sizingUpdateForm px-0" onSubmit={handleOnSubmitImage}>
+        <Form.Label className="stylingUpdateLabel text-white fs-4 mb-0">Main Image</Form.Label>
+        <Form.Group className=" stylingUpdateInput text-start" controlId="name">
+          <Form.Control className="stylingUpdateInput" onChange={handleImageOnChange} type="text" placeholder={currentProduct.image} />
+        </Form.Group>
+        <Button type="submit" onClick={showToastMessage} className="btn stylingUpdateButton btn-warning ">Update Image</Button>
+
+        <ToastContainer
+          position='top-center'
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='dark'
+          className="my-toast-container"
+        />
       </Form>
 
-      <Form className="mx-4 my-2" onSubmit={handleOnSubmitSecondImage}>
-        <Row>
-          <Col className="col-2 text-end"> 
-          <Form.Label className="text-white fs-4">2nd Image</Form.Label>
-          </Col>
-          <Col className="col-8">
-            <Form.Group className=" text-start" controlId="name">
-              <Form.Control onChange={handleSecondImageOnChange} type="text" placeholder={currentProduct.image2} />
-            </Form.Group>
-          </Col>
-          <Col className="col-2 text-start">
-            <Button type="submit" className="btn btn-warning w-75 ">Update Image</Button>
-          </Col>
-        </Row>
+
+
+      <Form className="sizingUpdateForm px-0" onSubmit={handleOnSubmitSecondImage}>
+        <Form.Label className="stylingUpdateLabel text-white fs-4 mb-0">2nd Image</Form.Label>
+        <Form.Group className=" text-start" controlId="name">
+          <Form.Control onChange={handleSecondImageOnChange} type="text" placeholder={currentProduct.image2} />
+        </Form.Group>
+        <Button type="submit" onClick={showToastMessage} className="btn stylingUpdateButton btn-warning ">Update Image</Button>
+
+        <ToastContainer
+          position='top-center'
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='dark'
+          className="my-toast-container"
+        />
       </Form>
 
-      <Form className="mx-4 my-2" onSubmit={handleOnSubmitThirdImage}>
-        <Row>
-          <Col className="col-2 text-end"> 
-          <Form.Label className="text-white fs-4">3rd Image</Form.Label>
-          </Col>
-          <Col className="col-8">
-            <Form.Group className=" text-start" controlId="name">
-              <Form.Control onChange={handleThirdImageOnChange} type="text" placeholder={currentProduct.image3} />
-            </Form.Group>
-          </Col>
-          <Col className="col-2 text-start">
-            <Button type="submit" className="btn btn-warning w-75 ">Update Image</Button>
-          </Col>
-        </Row>
-      </Form>
-          
-      <Form className="mx-4 my-2" onSubmit={handleOnSubmitPrice}>
-        <Row>
-          <Col className="col-2 text-end"> 
-          <Form.Label className="text-white fs-4">Price</Form.Label>
-          </Col>
-          <Col className="col-8">
-            <Form.Group className=" text-start" controlId="name">
-              <Form.Control onChange={handlePriceOnChange} type="text" placeholder= {currentProduct.price} />
-            </Form.Group>
-          </Col>
-          <Col className="col-2 text-start">
-            <Button type="submit" className="btn btn-warning w-75 ">Update Price</Button>
-          </Col>
-        </Row>
+      <Form className="sizingUpdateForm px-0" onSubmit={handleOnSubmitThirdImage}>
+        <Form.Label className="stylingUpdateLabel text-white fs-4 mb-0">3rd Image</Form.Label>
+        <Form.Group className=" text-start" controlId="name">
+          <Form.Control onChange={handleThirdImageOnChange} type="text" placeholder={currentProduct.image3} />
+        </Form.Group>
+        <Button type="submit" onClick={showToastMessage} className="btn stylingUpdateButton btn-warning ">Update Image</Button>
+
+        <ToastContainer
+          position='top-center'
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='dark'
+          className="my-toast-container"
+        />
       </Form>
 
-          
-      <Form className="mx-4 my-2" onSubmit={handleOnSubmitCategory}>
-        <Row>
-          <Col className="col-2 text-end"> 
-          <Form.Label className="text-white fs-4">Current Category: {currentProduct.category} </Form.Label>
-          </Col>
-          <Col className="col-8">
-            <Form.Group className=" text-start" controlId="name">
-            <Form.Select value={category} onChange={handleCategoryOnChange} className="mb-3">
-          <option value="Available">Available</option>
-          <option value="Archive">Archive</option>
+      <Form className="sizingUpdateForm px-0" onSubmit={handleOnSubmitPrice}>
+        <Form.Label className="stylingUpdateLabel text-white fs-4 mb-0">Price</Form.Label>
+        <Form.Group className=" text-start" controlId="name">
+          <Form.Control onChange={handlePriceOnChange} type="text" placeholder={currentProduct.price} />
+        </Form.Group>
+        <Button type="submit" onClick={showToastMessage} className="btn stylingUpdateButton btn-warning ">Update Price</Button>
 
-        </Form.Select>            </Form.Group>
-          </Col>
-          <Col className="col-2 text-start">
-            <Button type="submit" className="btn btn-warning w-75 ">Update Category</Button>
-          </Col>
-        </Row>
+<ToastContainer
+  position='top-center'
+  autoClose={5000}
+  hideProgressBar={true}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme='dark'
+  className="my-toast-container"
+/>
+      </Form>
+
+
+      <Form className="sizingUpdateForm px-0" onSubmit={handleOnSubmitCategory}>
+        <Form.Label className="stylingUpdateLabel text-white fs-4 mb-0">Current Category: {currentProduct.category} </Form.Label>
+        <Form.Group className=" text-start" controlId="name">
+          <Form.Select value={category} onChange={handleCategoryOnChange} className="mb-3">
+            <option value="Available">Available</option>
+            <option value="Archive">Archive</option>
+          </Form.Select>
+        </Form.Group>
+        <Button type="submit" onClick={showToastMessage} className="btn stylingUpdateButton btn-warning ">Update Category</Button>
+
+<ToastContainer
+  position='top-center'
+  autoClose={5000}
+  hideProgressBar={true}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme='dark'
+  className="my-toast-container"
+/>
+
       </Form>
 
 
 
       <Link to="/Admin">
-        <button type="button" className="btn btn-warning btn-lg m-2 w-25">Back to Admin</button>
+        <button type="button" className="btn sizingButton btn-warning btn-lg m-2 ">Back to Admin</button>
       </Link>
       <Link to="/">
-        <button type="button" className="btn btn-warning btn-lg m-2 w-25">Home</button>
+        <button type="button" className="btn sizingButton btn-warning btn-lg m-2 ">Home</button>
       </Link>
     </div>
 

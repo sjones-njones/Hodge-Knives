@@ -13,9 +13,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -24,6 +26,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -38,29 +41,115 @@
 .card {
   padding: 2em;
 }
+
 /* 
 .read-the-docs {
   color: white;
 } */
-
-@media (min-width: 578px){
-  .sizingImg { 
-    width: 75%;
-    
-  }
-  .sizingText { 
-    width: 60%;
-    
+@media (max-width: 577px) {
+  .sizingButton {
+    width: 90%;
   }
 
-  .sizingForm { 
+  .sizingUpdateForm {
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  .stylingUpdateLabel {
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .stylingUpdateButton {
     width: 50%;
-    
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+
+  }
+
+  .stylingUpdateInput {
+    width: 100%
+  }
+
+  .sizeLogin {
+    display: block;
+    margin-top: 7%;
+  }
+}
+
+@media (min-width: 578px) {
+  .sizingImg {
+    width: 75%;
+
+  }
+
+  .sizeLogin {
+    display: inline;
+    margin-left: 25%;
+
+  }
+
+  .sizingText {
+    width: 60%;
+
+  }
+
+  .sizingButton {
+    width: 50%;
+  }
+
+  .sizingForm {
+    width: 50%;
+
+  }
+
+  .sizingUpdateForm {
+    width: 100%;
+  }
+
+
+  .stylingUpdateLabel {
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .stylingUpdateButton {
+    width: 25%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: inline;
+
+
+  }
+
+  .stylingUpdateInput {
+    width: 100%
   }
 
   .toggle {
     background-color: yellow;
   }
 
+}
+
+.my-toast-container .Toastify__toast {
+  background-color: rgb(255, 193, 7);
+  color: black;
+  font-size: 20px;
+  /* width: 34vw; */
+  /* padding: 30px 20px; */
+}
+
+.navbar-toggler {
+  background-color: rgb(255, 193, 7);
+}
+
+.btn-link:hover {
+  background-color:black;
 }
 

@@ -6,9 +6,11 @@ import App from './App.jsx'
 import './index.css'
 import Home from './Pages/Home.jsx';
 import Signup from './Pages/Signup.jsx';
+import Forge from './Pages/Forge.jsx'
 import Admin from './Pages/Admin.jsx';
 import Detail from './Pages/Detail.jsx';
 import Past from './Pages/Past.jsx';
+// import Forgot from './Pages/Forgot.jsx';
 import UpdateProduct from './Pages/UpdateProduct.jsx';
 import AdminCurrent from './Components/AdminCurrent';
 import AdminArchive from './Components/AdminArchive';
@@ -36,18 +38,22 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login />
       },
-      //  {
-      //   path: '/signup',
-      //   element: <Signup />
+       {
+        path: '/Signup',
+        element: <Signup />
+      },
+      // {
+      //   path: '/Forgot',
+      //   element: <Forgot />
       // },
       {
         path: '/About',
         element: <About />
       },
-      // {
-      //   path: '/Contact',
-      //   element: <Contact />
-      // },
+      {
+        path: '/Forge',
+        element: <Forge />
+      },
       {
         path: '/Admin',
         element: <Admin />
