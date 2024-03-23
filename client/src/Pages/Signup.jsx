@@ -90,7 +90,36 @@ const Signup = () => {
       />
           </Form>
     </div>
-   
+    {/* <form onSubmit={handleOnSubmit}>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={name}
+        onChange={handleNameOnChange}
+      />
+      <label htmlFor="name">Enter Your Name</label>
+      <br />
+      <input
+        type="text"
+        id="email"
+        name="email"
+        value={email}
+        onChange={handleEmailOnChange}
+      />
+      <label htmlFor="email">Enter Your Email</label>
+      <br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        value={password}
+        onChange={handlePasswordOnChange}
+      />
+      <label htmlFor="password">Enter Your Password</label>
+      <br />
+      <button type="submit">Submit</button>
+    </form> */}
     </div>
   );
 };

@@ -19,7 +19,6 @@ query Product($productId: ID!) {
   }
 }
 `;
-
 function SingleProductDetail() {
   const { id } = useParams();
   const { data } = useQuery(QUERY_PRODUCTS, {

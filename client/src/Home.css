@@ -128,8 +128,14 @@
   }
 
   .stylingUpdateInput {
-    width: 100%
+    width: 100%;
+    background-color:black;
+    border-color: black; 
+    color: black;
+    text-wrap: wrap;
   }
+
+
 
   .toggle {
     background-color: yellow;

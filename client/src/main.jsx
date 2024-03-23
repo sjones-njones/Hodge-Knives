@@ -25,6 +25,8 @@ import Care from './Pages/Care.jsx';
 import AdminAddProducts from './Components/AdminAddProducts';
 import AdminUpdateProduct from './Pages/UpdateProduct.jsx';
 import Contact from './Pages/Contact.jsx';
+import FireBase from "./Pages/FireBase.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
       }, {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/firebase',
+        element: <FireBase />
       },
        {
         path: '/Signup',

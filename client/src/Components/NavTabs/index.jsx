@@ -34,6 +34,7 @@ function NavTabs() {
               <Nav.Link className='text-black' href="/admin">Admin</Nav.Link>
               <Nav.Link className='' href="/forge">Cart</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
+              <Nav.Link href="/firebase">Firebase</Nav.Link>
             </Nav>
             
           </Navbar.Collapse>
