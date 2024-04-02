@@ -30,11 +30,11 @@ function NavTabs() {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Nav>
+            {/* <Nav> */}
               {/* <Nav.Link className='' href="/forge">Cart</Nav.Link> */}
               {/* <Nav.Link href="/login">Login</Nav.Link> */}
-              <Nav.Link className='text-black' href="/admin">Admin</Nav.Link>
-            </Nav>
+              {/* <Nav.Link className='text-black' href="/admin">Admin</Nav.Link> */}
+            {/* </Nav> */}
             
           </Navbar.Collapse>
         </Container>

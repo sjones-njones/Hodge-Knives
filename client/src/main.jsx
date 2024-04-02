@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         element: <Forge />
       },
       {
-        path: '/Admin',
+        path: '/a',
         element: <Admin />
       },
       {
