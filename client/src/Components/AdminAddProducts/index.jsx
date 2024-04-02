@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useMutation, gql } from "@apollo/client";
-import { Button, Container, Form } from "react-bootstrap";
+import { Button, Image, Container, Form } from "react-bootstrap";
 import { ADDPRODUCTS } from '../../../utils/queries';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import app from '../../FireBaseSetUp';
@@ -298,6 +298,7 @@ const AdminAddProducts = () => {
           <div className=" m-4 form-group">
 
             <Form.Group controlId="formFile" className="upload mb-3">
+          
               <Form.Label className='label d-block text-white'>Main Image {imgPerc > 0 && "Uploading: " + imgPerc + "%"}</Form.Label>
               <Form.Control type="file"
                 accept="image/*"
@@ -316,6 +317,7 @@ const AdminAddProducts = () => {
               value={image}
               onChange={handleImageOnChange}
             />
+            <Image></Image>
           </div>
 
           <div className=" m-4 form-group">

@@ -86,7 +86,7 @@ const handleDeleteProduct = () => {
           ))}
         </Row>
       </div>
-      <Link to="/A">
+      <Link to="/a">
         <button className="sizingButton fs-3 m-2 btn btn-warning btn-block">Back to Admin Page</button>
       </Link>
       <Link to="/">

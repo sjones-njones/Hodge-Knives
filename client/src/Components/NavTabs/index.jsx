@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import Logo from "../../assets/images/hodge-knives-logo.png";
 import Container from 'react-bootstrap/Container';
+import FacebookLogo from "../../assets/images/facebookLogoWhite2.png"
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -10,7 +11,6 @@ function NavTabs() {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" className="nav-link bg-black">
-        <Container>
           <Link to='/'>
             <img src={Logo} alt="Hodge Knives Logo" style={{ width: 200, height: 200 }} />
           </Link>
@@ -30,14 +30,21 @@ function NavTabs() {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            {/* <Nav> */}
+            <Nav className='mx-5'>
+            <a className="text-decoration-none" href="https://www.facebook.com/profile.php?id=100057059155776"><p className="mt-4 mx-3 text-warning my-auto fs-5">
+        Follow us on Facebook
+        </p></a>
+
+        <a href="https://www.facebook.com/profile.php?id=100057059155776">
+          <img className='' src={FacebookLogo} alt="Facebook Logo"
+            style={{ width: 70, height: 70 }} />
+        </a>
               {/* <Nav.Link className='' href="/forge">Cart</Nav.Link> */}
               {/* <Nav.Link href="/login">Login</Nav.Link> */}
               {/* <Nav.Link className='text-black' href="/admin">Admin</Nav.Link> */}
-            {/* </Nav> */}
+            </Nav>
             
           </Navbar.Collapse>
-        </Container>
       </Navbar>
     </>
   );
