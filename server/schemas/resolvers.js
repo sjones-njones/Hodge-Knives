@@ -58,7 +58,8 @@ const resolvers = {
           name: user.name,
         });
 
-        return { token };
+        return { token, user };
+        
       } catch (error) {
         return new GraphQLError("Invalid Sign Up", {
           extensions: {

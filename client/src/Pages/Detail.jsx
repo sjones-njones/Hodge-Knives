@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { gql } from "@apollo/client";
 import Carousel from 'react-bootstrap/Carousel';
-// import ExampleCarouselImage from 'components/ExampleCarouselImage';
-// import Spinner from "../assets/images/spinner.gif";
-// import { useStoreContext } from '../../utils/GlobalState';
+// import { QUERY_PRODUCTS } from '../../utils/';
+
 import { Card, Row, Col, Container, Button } from "react-bootstrap";
 import SingleProductDetail from '../Components/SingleProductDetail';
 import { Link, useParams, Route, Routes } from 'react-router-dom';
@@ -23,7 +22,14 @@ query Product($productId: ID!) {
 }
 `;
 
+
 function Detail() {
+  const { id } = useParams();
+  const { data } = useQuery(QUERY_PRODUCTS, {
+    variables: { productId: id },
+  });
+
+  const currentProduct = data?.product || {};
   return(
 
     <div>
@@ -32,7 +38,9 @@ function Detail() {
         <Link to={`/Shop`}>
           <Button className=' btn m-2 hover btn-warning text-dark fs-5'>Back to Shop</Button>
         </Link>
-        <Button className='btn m-2 hover btn-warning text-dark fs-5'>Add to Cart</Button>
+        <Link to={`/Order/${currentProduct._id}`}>
+        <Button value='' className='btn m-2 hover btn-warning text-dark fs-5'>Buy Now</Button>
+        </Link>
       </div>
     </div>
     ) 

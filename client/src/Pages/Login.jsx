@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useMutation, gql } from "@apollo/client";
 import giveMeMyStuff from "../decode";
@@ -36,17 +37,15 @@ const Login = () => {
 
   async function handleOnSubmit(event) {
     event.preventDefault();
-    console.log(event.target.value);
     console.log({ email, password });
     const data = await loginMutation({
       variables: {
         email,
         password,
       },
-      
     });
-    console.log({ email, password });
     const myStuff = giveMeMyStuff(data.data.login.token);
+    console.log({ email, password });
     console.log("🚀 ~ file: Login.jsx:28 ~ handleOnSubmit ~ myStuff:", myStuff);
     console.log(giveMeMyStuff(data.data.login.token));
     setEmail("");

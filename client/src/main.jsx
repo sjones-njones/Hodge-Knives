@@ -19,13 +19,14 @@ import Login from './Pages/Login.jsx';
 // import ErrorPage from './pages/Error';
 import About from './Pages/About.jsx';
 import Shop from './Pages/Shop.jsx';
+import Order from './Pages/Order.jsx';
+
 import ProductAdded from './Pages/ProductAdded.jsx'
 import ProductDeleted from './Pages/ProductDeleted.jsx'
 import Care from './Pages/Care.jsx';
 import AdminAddProducts from './Components/AdminAddProducts';
 import AdminUpdateProduct from './Pages/UpdateProduct.jsx';
 import Contact from './Pages/Contact.jsx';
-import FireBase from "./Pages/FireBase.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,11 +41,7 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login />
       },
-      {
-        path: '/firebase',
-        element: <FireBase />
-      },
-       {
+            {
         path: '/Signup',
         element: <Signup />
       },
@@ -87,6 +84,10 @@ const router = createBrowserRouter([
       {
         path: '/Shop',
         element: <Shop />
+      },
+      {
+        path: '/Order/:id',
+        element: <Order />
       },
       {
         path: '/Past',

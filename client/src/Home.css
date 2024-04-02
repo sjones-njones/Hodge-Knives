@@ -79,9 +79,26 @@
     display: block;
     margin-top: 7%;
   }
+  .orderForm{
+    display: block;
+
+  }
+  .picSizing{
+    width: 100%;
+  }
+  
+  
 }
 
 @media (min-width: 578px) {
+  .orderForm{
+
+
+  }
+  .picSizing{
+    width: 75%;
+  }
+  
   .sizingImg {
     width: 75%;
 
