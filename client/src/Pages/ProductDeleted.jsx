@@ -11,7 +11,7 @@ const ProductAdded = () => {
               <Link to="/">
           <button type="button" className="btn btn-warning btn-lg btn-secondary m-2 sizingButton fs-4">Home</button>
         </Link>
-        <Link to="/Admin">
+        <Link to="/a">
         <button className='btn btn-warning btn-lg m-2 sizingButton fs-4'>Back to Admin Page</button>
       </Link>
       <Confetti/>

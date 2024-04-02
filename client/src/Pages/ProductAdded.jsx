@@ -12,7 +12,7 @@ const ProductAdded = () => {
         <button type="submit" className="btn sizingButton btn-warning btn-lg m-2  fs-4">Add Another Product</button>
       </Link>
 
-      <Link to="/Admin">
+      <Link to="/a">
         <button className='btn btn-warning btn-lg m-2 sizingButton fs-4'>Back to Admin</button>
       </Link>
       <Link to="/">

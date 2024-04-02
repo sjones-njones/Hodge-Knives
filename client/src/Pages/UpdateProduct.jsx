@@ -559,7 +559,7 @@ const ProductUpdate = () => {
 
 
 
-      <Link to="/Admin">
+      <Link to="/a">
         <button type="button" className="btn sizingButton btn-warning btn-lg m-2 ">Back to Admin</button>
       </Link>
       <Link to="/">
