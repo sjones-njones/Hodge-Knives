@@ -12,6 +12,7 @@ function AdminArchive() {
   
   const [show, setShow] = useState(false);
 const [productId, setId] = useState(null);
+
 function handlingShowAndId(e) {
   handleShow(e);
   handleId(e);

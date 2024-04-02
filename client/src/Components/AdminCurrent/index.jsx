@@ -60,7 +60,7 @@ function AdminProductList() {
                   <Button value={product._id} className='btn hover m-1 w-100 btn-warning text-dark fs-5' >Update Product</Button>
                 </Link>
 
-                <Button variant="btn hover m-1 w-100 btn-warning text-dark fs-5" onClick={handlingShowAndId}>
+                <Button  value={product._id} variant="btn hover m-1 w-100 btn-warning text-dark fs-5" onClick={handlingShowAndId}>
 Delete Product                </Button>
 
                 <Modal show={show} onHide={handleClose}>
