@@ -1,5 +1,6 @@
 import "../Home.css";
 import { Form, Button, Card, Row, Col, Image } from 'react-bootstrap';
+
 import emailjs from '@emailjs/browser';
 import { useRef } from "react";
 import { gql } from "@apollo/client";
@@ -102,9 +103,8 @@ const Order = () => {
 
                 <Form ref={form} onSubmit={sendEmail}>
 
-                  <Row className="mb-3">
-
-                    <Form.Group as={Col}className="mb-3" controlId="exampleForm.ControlInput2">
+                  <Row className="text-start">
+                    <Form.Group as={Col} className="mb-2" controlId="exampleForm.ControlInput2">
                       <Form.Label className='text-white fs-5'>Name</Form.Label>
                       <Form.Control
                         type="name" name='name' />
@@ -114,92 +114,93 @@ const Order = () => {
                       <Form.Label className='text-white fs-5'>Email</Form.Label>
                       <Form.Control type="email" name='email' />
                     </Form.Group>
-
-
                   </Row>
 
-                  <Form.Group className="mb-3" controlId="formGridAddress1">
+                  <Form.Group className="text-start mb-2" controlId="formGridAddress1">
                     <Form.Label className='text-white fs-5'>Address</Form.Label>
                     <Form.Control placeholder="1234 Main St" name='address' />
                   </Form.Group>
 
-                  <Form.Group className="mb-3" controlId="formGridAddress2">
+                  <Form.Group className="text-start mb-2" controlId="formGridAddress2">
                     <Form.Label className='text-white fs-5'>Address 2</Form.Label>
                     <Form.Control placeholder="Apartment, studio, or floor" name='address2' />
                   </Form.Group>
 
-                  <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridCity">
+                  <Row className="text-start mb-2">
+                    <Form.Group controlId="formGridCity">
                       <Form.Label className='text-white fs-5'>City</Form.Label>
                       <Form.Control name='city' />
                     </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridState">
-                      <Form.Label className='text-white fs-5'>State</Form.Label>
-                      <Form.Select
-                        name="state"
-                        type="state" defaultValue="Choose...">
-                        <option value="">Select state</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="GU">Guam</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="PR">Puerto Rico</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                      </Form.Select>
-                    </Form.Group>
+                    <Row className="w-100">
+                      <Form.Group as={Col} className='mt-2' controlId="formGridState">
+                        <Form.Label className='text-white fs-5'>State</Form.Label>
+                        <Form.Select
+                          className=""
+                          name="state"
+                          type="state" defaultValue="Choose...">
+                          <option value="">Select state</option>
+                          <option value="AL">Alabama</option>
+                          <option value="AK">Alaska</option>
+                          <option value="AZ">Arizona</option>
+                          <option value="AR">Arkansas</option>
+                          <option value="CA">California</option>
+                          <option value="CO">Colorado</option>
+                          <option value="CT">Connecticut</option>
+                          <option value="DE">Delaware</option>
+                          <option value="DC">District of Columbia</option>
+                          <option value="FL">Florida</option>
+                          <option value="GA">Georgia</option>
+                          <option value="GU">Guam</option>
+                          <option value="HI">Hawaii</option>
+                          <option value="ID">Idaho</option>
+                          <option value="IL">Illinois</option>
+                          <option value="IN">Indiana</option>
+                          <option value="IA">Iowa</option>
+                          <option value="KS">Kansas</option>
+                          <option value="KY">Kentucky</option>
+                          <option value="LA">Louisiana</option>
+                          <option value="ME">Maine</option>
+                          <option value="MD">Maryland</option>
+                          <option value="MA">Massachusetts</option>
+                          <option value="MI">Michigan</option>
+                          <option value="MN">Minnesota</option>
+                          <option value="MS">Mississippi</option>
+                          <option value="MO">Missouri</option>
+                          <option value="MT">Montana</option>
+                          <option value="NE">Nebraska</option>
+                          <option value="NV">Nevada</option>
+                          <option value="NH">New Hampshire</option>
+                          <option value="NJ">New Jersey</option>
+                          <option value="NM">New Mexico</option>
+                          <option value="NY">New York</option>
+                          <option value="NC">North Carolina</option>
+                          <option value="ND">North Dakota</option>
+                          <option value="OH">Ohio</option>
+                          <option value="OK">Oklahoma</option>
+                          <option value="OR">Oregon</option>
+                          <option value="PA">Pennsylvania</option>
+                          <option value="PR">Puerto Rico</option>
+                          <option value="RI">Rhode Island</option>
+                          <option value="SC">South Carolina</option>
+                          <option value="SD">South Dakota</option>
+                          <option value="TN">Tennessee</option>
+                          <option value="TX">Texas</option>
+                          <option value="UT">Utah</option>
+                          <option value="VT">Vermont</option>
+                          <option value="VA">Virginia</option>
+                          <option value="WA">Washington</option>
+                          <option value="WV">West Virginia</option>
+                          <option value="WI">Wisconsin</option>
+                          <option value="WY">Wyoming</option>
+                        </Form.Select>
+                      </Form.Group>
 
-                    <Form.Group className='mt-3' controlId="formGridZip">
-                      <Form.Label className='text-white fs-5'>Zip</Form.Label>
-                      <Form.Control type="zip" name='zip' />
-                    </Form.Group>
+                      <Form.Group as={Col} className='mt-2' controlId="formGridZip">
+                        <Form.Label className='text-white mx-4 fs-5'>Zip</Form.Label>
+                        <Form.Control className="mx-4" type="zip" name='zip' />
+                      </Form.Group>
+                    </Row>
 
                     <Form.Group className="d-none" controlId="productName">
                       <Form.Label className='text-white fs-5'></Form.Label>
@@ -216,7 +217,7 @@ const Order = () => {
                       <Form.Control value={currentProduct.image} type="imgURL" name='imgURL' />
                     </Form.Group>
 
-                    <Form.Group as={Col} className='mt-3'
+                    <Form.Group as={Col} className='mt-2'
                       controlId="paymentMethod">
                       <Form.Label className='text-white fs-5'>Payment Method</Form.Label>
                       <Form.Select
@@ -231,13 +232,15 @@ const Order = () => {
                       {/* <Form.Control type="paymentMethod" name='paymentMethod' /> */}
                     </Form.Group>
 
-                    <Form.Group as={Col} className="mt-3" controlId="userName">
-                      <Form.Label className='text-white fs-5'>Paypal/Venmo Username</Form.Label>
-                      <Form.Control type="userName" name='userName' />
+                    <Form.Group className="mt-2" controlId="userName">
+                      <Form.Label className='text-white fs-5'>Paypal/Venmo User Name</Form.Label>
+                      <Form.Control type="userName" name='userName'
+                        placeholder="Payment Username"
+                      />
                     </Form.Group>
                   </Row>
 
-                  <Button className="btn btn-lg btn-warning " type="submit" onClick={showToastMessage}>
+                  <Button className="mt-2 btn btn-lg btn-warning " type="submit" onClick={showToastMessage}>
                     Order Now
                   </Button>
 
