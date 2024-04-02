@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div>
       <Container className='mt-3'>
-        <Card className="bg-black ">
+        <Card className="cardSizing bg-black ">
           <Card.Title className='text-white fs-1 mb-3'>About the Blacksmith</Card.Title>
           <Card.Img className="mx-auto sizingImg" variant="top" src={Maker} />
           <Card.Body>

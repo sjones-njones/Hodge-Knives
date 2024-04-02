@@ -66,8 +66,8 @@ const Order = () => {
   return (
     <PayPalScriptProvider options={initialOptions}>
 
-      <div>
-        <div className=' mx-auto'>
+      <div className="">
+        <div className='orderForm mx-auto'>
           <Row className="orderForm">
             <Col>
 
@@ -104,7 +104,7 @@ const Order = () => {
 
                   <Row className="mb-3">
 
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+                    <Form.Group as={Col}className="mb-3" controlId="exampleForm.ControlInput2">
                       <Form.Label className='text-white fs-5'>Name</Form.Label>
                       <Form.Control
                         type="name" name='name' />

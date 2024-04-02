@@ -35,15 +35,12 @@ console.log(data);
         {data.productsArchive.map((product) => (
           <Col key={product._id} _id={product._id}
           >
-            <Link className='links' to={`/products/${product._id}`}>
+            <Link className='links' to={`/archiveProducts/${product._id}`}>
               <Card className='border-warning hover bg-black h-100'>
                 <Card.Img variant="top" src={product.image} />
                 <Card.Body>
                   <Card.Title className='fs-3 text-white'>{product.name}</Card.Title>
-                  <Card.Text className='fs-5 text-white'>
-                    ${product.price}
-                  </Card.Text>
-                </Card.Body>
+                                </Card.Body>
               </Card>
             </Link>
           </Col>

@@ -9,6 +9,8 @@ import Signup from './Pages/Signup.jsx';
 import Forge from './Pages/Forge.jsx'
 import Admin from './Pages/Admin.jsx';
 import Detail from './Pages/Detail.jsx';
+import ArchiveDetail from './Pages/ArchiveDetail.jsx';
+
 import Past from './Pages/Past.jsx';
 // import Forgot from './Pages/Forgot.jsx';
 import UpdateProduct from './Pages/UpdateProduct.jsx';
@@ -96,6 +98,10 @@ const router = createBrowserRouter([
      {
         path: '/products/:id',
         element: <Detail />
+      },
+      {
+        path: '/archiveProducts/:id',
+        element: <ArchiveDetail />
       },
       {
         path: '/productAdded',

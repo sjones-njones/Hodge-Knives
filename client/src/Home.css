@@ -86,13 +86,18 @@
   .picSizing{
     width: 100%;
   }
-  
+  .cardSizing{
+    padding: 0;
+  }
   
 }
 
 @media (min-width: 578px) {
   .orderForm{
 
+width: 85%;
+display:flex;
+  justify-content: center;
 
   }
   .picSizing{
