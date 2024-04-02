@@ -392,7 +392,7 @@ const AdminAddProducts = () => {
             </select>
           </div>
           <Button type="submit" className="btn sizingButton btn-warning btn-lg m-2 fs-3">Add Product</Button>
-          <Link to="/Admin">
+          <Link to="/A">
             <Button type="button" className="sizingButton btn btn-warning btn-lg fs-3 m-2">Back</Button>
           </Link>
         </form>
