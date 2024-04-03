@@ -32,7 +32,7 @@ console.log(data);
   return (
     <div>
       <Row xs={12} sm={8} md={3} lg={4} className="m-1 g-4">
-        {data.productsArchive.map((product) => (
+        {data.productsArchive.toReversed().map((product) => (
           <Col key={product._id} _id={product._id}
           >
             <Link className='links' to={`/archiveProducts/${product._id}`}>

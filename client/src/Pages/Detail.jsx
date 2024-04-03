@@ -39,7 +39,7 @@ function Detail() {
           <Button className=' btn m-2 hover btn-warning text-dark fs-5'>Back to Shop</Button>
         </Link>
         <Link to={`/Order/${currentProduct._id}`}>
-        <Button value='' className='btn m-2 hover btn-warning text-dark fs-5'>Buy Now</Button>
+        <Button value='' className='btn m-2 hover btn-warning text-dark fs-5'>Order Now</Button>
         </Link>
       </div>
     </div>

@@ -25,45 +25,45 @@ query Product($productId: ID!) {
 }
 `;
 const Order = () => {
-
   const showToastMessage = () => {
-
+    
     toast("Order Sent! We will send you a payment request soon!"
     );
   };
-
+  
   const initialOptions = {
     clientId: "AX_ibBYdzRLVeqf4HHDKaatL6BWvCJQC7vFGVeteusWgwLXAsFo2_iQzdpnZpdkqky519oYoQ1-LUqiF",
     currency: "USD",
     intent: "capture",
     'disable-funding': 'credit'
-
-
+    
+    
   };
   const form = useRef()
-
+  
   const sendEmail = (e) => {
     e.preventDefault();
-
+    
     emailjs.sendForm('service_nqup4tv', 'template_9cp61g6', form.current, {
       publicKey: 'VkcSxKO-vNCJO3T3-',
     })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
+    .then(
+      () => {
+        console.log('SUCCESS!');
+      },
+      (error) => {
+        console.log('FAILED...', error.text);
+      },
       );
-    e.target.reset()
-  };
-
-  const { id } = useParams();
-  const { data } = useQuery(QUERY_PRODUCTS, {
-    variables: { productId: id },
-  });
-  const currentProduct = data?.product || {};
+      e.target.reset()
+    };
+    
+    const { id } = useParams();
+    const { data } = useQuery(QUERY_PRODUCTS, {
+      variables: { productId: id },
+    });
+    const currentProduct = data?.product || {};
+    const orderTotal = currentProduct.price + 20
   return (
     <PayPalScriptProvider options={initialOptions}>
 
@@ -88,7 +88,9 @@ const Order = () => {
                         fluid
                         width=""
                         className="picSizing" src={currentProduct.image} alt={currentProduct.name} />
+<h5 className="mt-4 w-75 mx-auto text-white">A $20 flat shipping fee will be added to all orders. </h5>
 
+<h5 className="mt-4 w-75 mx-auto text-white">Order Total: ${orderTotal}</h5>
                     </Col>
 
 
@@ -132,8 +134,7 @@ const Order = () => {
                       <Form.Control name='city' />
                     </Form.Group>
 
-                    <Row className="w-100">
-                      <Form.Group as={Col} className='mt-2' controlId="formGridState">
+                      <Form.Group className='mt-2' controlId="formGridState">
                         <Form.Label className='text-white fs-5'>State</Form.Label>
                         <Form.Select
                           className=""
@@ -196,11 +197,10 @@ const Order = () => {
                         </Form.Select>
                       </Form.Group>
 
-                      <Form.Group as={Col} className='mt-2' controlId="formGridZip">
-                        <Form.Label className='text-white mx-4 fs-5'>Zip</Form.Label>
-                        <Form.Control className="mx-4" type="zip" name='zip' />
+                      <Form.Group className='mt-2' controlId="formGridZip">
+                        <Form.Label className='text-white  fs-5'>Zip</Form.Label>
+                        <Form.Control className="" type="zip" name='zip' />
                       </Form.Group>
-                    </Row>
 
                     <Form.Group className="d-none" controlId="productName">
                       <Form.Label className='text-white fs-5'></Form.Label>
