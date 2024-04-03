@@ -46,7 +46,7 @@ const handleDeleteProduct = () => {
     <div>
       <div>
         <Row xs={12} sm={8} md={3} lg={4} className="g-4 mt-2">
-          {data.productsArchive.map((product) => (
+          {data.productsArchive.toReversed().map((product) => (
             <Col key={product._id}>
               <Card className='border-warning hover bg-black h-100'>
                 <Card.Title className='fs-3 text-white'>{product.name}</Card.Title>
