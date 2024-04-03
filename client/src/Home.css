@@ -51,6 +51,9 @@
     width: 90%;
   }
 
+  .sizingButtons {
+    width: 50%;
+  }
   .sizingUpdateForm {
     width: 100%;
     justify-content: center;
