@@ -35,24 +35,24 @@ function SingleProductDetail() {
           <Carousel.Item>
             <Image
               fluid
-              width="50%"
-              className="" src={currentProduct.image} alt={currentProduct.name} />
+              // width="50%"
+              className="detailPicSizing" src={currentProduct.image} alt={currentProduct.name} />
           </Carousel.Item>
           <Carousel.Item>
             <Image
               fluid
               width="50%"
-              className="" src={currentProduct.image2} alt={currentProduct.name} />
+              className="detailPicSizing" src={currentProduct.image2} alt={currentProduct.name} />
           </Carousel.Item>
           <Carousel.Item>
             <Image
               fluid
               width="50%"
-              className="" src={currentProduct.image3} alt={currentProduct.name} />
+              className="detailPicSizing" src={currentProduct.image3} alt={currentProduct.name} />
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="col-sm-5">
+      <div className="my-auto mx-auto col-sm-5">
         <h2 className='fw-bold text-white'>{currentProduct.name}</h2>
         <div className=''>
           <h5 className='w-75 mx-auto text-start mt-5 text-white'>{currentProduct.description}</h5>

@@ -58,26 +58,18 @@
     width: 100%;
     justify-content: center;
   }
-
-
   .stylingUpdateLabel {
     width: 100%;
     text-align: center;
-
   }
-
   .stylingUpdateButton {
     width: 50%;
     margin-top: 10px;
     margin-bottom: 20px;
-
-
   }
-
   .stylingUpdateInput {
     width: 100%
   }
-
   .sizeLogin {
     display: block;
     margin-top: 7%;
@@ -88,6 +80,9 @@
   }
   .picSizing{
     width: 100%;
+  }
+  .detailPicSizing{
+    width: 85%;
   }
   .cardSizing{
     padding: 0;
@@ -106,7 +101,9 @@ display:flex;
   .picSizing{
     width: 75%;
   }
-  
+  .detailPicSizing{
+    width: 50%;
+  }
   .sizingImg {
     width: 75%;
 
