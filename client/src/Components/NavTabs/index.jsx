@@ -1,6 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
 import Logo from "../../assets/images/hodge-knives-logo.png";
-import Container from 'react-bootstrap/Container';
 import FacebookLogo from "../../assets/images/facebookLogoWhite2.png"
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -27,6 +26,8 @@ function NavTabs() {
               <NavDropdown className="bg-black" title="Pictures" id="collapsible-nav-dropdown">
                 <NavDropdown.Item className="" href="/past">Past Knives</NavDropdown.Item>
                 <NavDropdown.Item className=" " href="/forge">The Blacksmith's Forge
+                </NavDropdown.Item>
+                <NavDropdown.Item className=" " href="/process">The Process
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>

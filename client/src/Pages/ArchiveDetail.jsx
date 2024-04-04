@@ -36,10 +36,10 @@ function Detail() {
 <SingleProductDetailArchive />
       <div className='m-3'>
         <Link to={`/Shop`}>
-          <Button className=' btn m-2 hover btn-warning text-dark fs-5'>Back to Shop</Button>
+          <Button className=' sizingButtons btn m-2 hover btn-warning text-dark fs-5'>Back to Shop</Button>
         </Link>
         <Link to={`/Past`}>
-          <Button className=' btn m-2 hover btn-warning text-dark fs-5'>Back to Past Knives</Button>
+          <Button className=' sizingButtons btn m-2 hover btn-warning text-dark fs-5'>Back to Past Knives</Button>
         </Link>
             </div>
     </div>

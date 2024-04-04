@@ -1,11 +1,7 @@
-import { useEffect, useState } from 'react';
 import { gql } from "@apollo/client";
-import Carousel from 'react-bootstrap/Carousel';
-// import { QUERY_PRODUCTS } from '../../utils/';
-
-import { Card, Row, Col, Container, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import SingleProductDetail from '../Components/SingleProductDetail';
-import { Link, useParams, Route, Routes } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 export const QUERY_PRODUCTS = gql`
 query Product($productId: ID!) {
