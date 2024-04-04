@@ -8,6 +8,7 @@ import Home from './Pages/Home.jsx';
 import Signup from './Pages/Signup.jsx';
 import Forge from './Pages/Forge.jsx'
 import Admin from './Pages/Admin.jsx';
+import Process from './Pages/Process.jsx';
 import Detail from './Pages/Detail.jsx';
 import ArchiveDetail from './Pages/ArchiveDetail.jsx';
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       }, {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/process',
+        element: <Process />
       },
             {
         path: '/Signup',

@@ -91,6 +91,9 @@
 }
 
 @media (min-width: 578px) {
+  .processSizing{
+    width: 35%
+  }
   .orderForm{
 
 width: 85%;
