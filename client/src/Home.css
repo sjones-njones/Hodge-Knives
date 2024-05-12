@@ -7,6 +7,14 @@
   background-color:black;
 }
 
+.nav-tabs
+  .nav-link {
+    border-radius: 0%;
+  }
+
+  .dropdown-item {
+    
+  }
 .logo {
   height: 6em;
   padding: 1.5em;

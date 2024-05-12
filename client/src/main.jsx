@@ -7,6 +7,8 @@ import './index.css'
 import Home from './Pages/Home.jsx';
 import Signup from './Pages/Signup.jsx';
 import Forge from './Pages/Forge.jsx'
+import BallBearing from './Pages/BallBearing.jsx'
+
 import Admin from './Pages/Admin.jsx';
 import Process from './Pages/Process.jsx';
 import Detail from './Pages/Detail.jsx';
@@ -47,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: '/process',
         element: <Process />
+      },
+      {
+        path: '/ballBearing',
+        element: <BallBearing />
       },
             {
         path: '/Signup',
