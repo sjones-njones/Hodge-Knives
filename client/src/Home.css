@@ -12,8 +12,10 @@
     border-radius: 0%;
   }
 
-  .dropdown-item {
-    
+  
+.nav-tabs .dropdown-menu {
+    margin-top: 5%;
+    margin-left: 20%;
   }
 .logo {
   height: 6em;

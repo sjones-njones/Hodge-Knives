@@ -5,6 +5,8 @@ import FacebookLogo from "../../assets/images/facebookLogoWhite2.png"
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 function NavTabs() {
 
   const currentPage = useLocation().pathname;
@@ -28,6 +30,8 @@ function NavTabs() {
               <NavDropdown.Item className="" href="/past">Past Knives</NavDropdown.Item>
               <NavDropdown className="process bg-black" title="The Process" id="collapsible-nav-dropdown">
                 <NavDropdown.Item className="" href="/process">G10 Build from Drill Bit </NavDropdown.Item>
+                <Dropdown.Divider />
+
                 <NavDropdown.Item className="" href="/ballBearing">Damascus Build from Ball Bearings</NavDropdown.Item>
               </NavDropdown>
             </NavDropdown>
