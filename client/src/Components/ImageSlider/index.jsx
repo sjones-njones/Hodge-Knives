@@ -17,21 +17,41 @@ const ImageSlider = ({ images }) => {
     variableWidth: true,
     adaptiveHeight: true,
     centerMode: true,
+    mobileFirst:true,
     arrows: false,
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
+          dots: true,
+          mobileFirst:true,
+          infinite: true,
+          speed: 500,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          cssEase: 'linear',
+          variableWidth: true,
+          adaptiveHeight: true,
           centerMode: true,
-          slidesToShow: 3
+          arrows: false,
+          slidesToShow: 1
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 577,
         settings: {
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          cssEase: 'linear',
+          variableWidth: true,
+          adaptiveHeight: true,
           arrows: false,
-          centerMode: true,
+          mobileFirst:true,
           slidesToShow: 1
         }
       }
