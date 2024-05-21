@@ -46,8 +46,10 @@
     "react-grid-layout": "^1.4.4",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.20.1",
+    "react-slick": "^0.30.2",
     "react-toastify": "^10.0.4",
     "resend": "^3.2.0",
+    "slick-carousel": "^1.8.1",
     "vite": "^5.2.6",
     "vite-plugin-node-polyfills": "^0.21.0"
   }

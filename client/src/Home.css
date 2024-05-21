@@ -4,24 +4,48 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color:black;
+  background-color: black;
 }
 
-.nav-tabs
-  .nav-link {
-    border-radius: 0%;
-  }
+.nav-tabs .nav-link {
+  border-radius: 0%;
+}
 
-  
-.nav-tabs .dropdown-menu {
-    margin-top: 5%;
-    margin-left: 20%;
-  }
+
+.navbar{
+  padding:0%;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+}
+
+.image-slider {
+  width: 100%;
+  /* margin: 10px; */
+  text-align: center;
+}
+
+.image-slider img {
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
+  min-width: 100%;
+  height: 500px;
+  max-width: none;
+
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border: 0;
+  padding: 5px;
+  /* -ms-interpolation-mode: bicubic; */
+  /* margin: 2px; */
 }
 
 .logo:hover {
@@ -49,7 +73,7 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
 }
 
 /* 
@@ -64,62 +88,78 @@
   .sizingButtons {
     width: 50%;
   }
+
   .sizingUpdateForm {
     width: 100%;
     justify-content: center;
   }
+
   .stylingUpdateLabel {
     width: 100%;
     text-align: center;
   }
+
   .stylingUpdateButton {
     width: 50%;
     margin-top: 10px;
     margin-bottom: 20px;
   }
+
   .stylingUpdateInput {
     width: 100%
   }
+
   .sizeLogin {
     display: block;
     margin-top: 7%;
   }
-  .orderForm{
+
+  .orderForm {
     display: block;
 
   }
-  .picSizing{
+
+  .picSizing {
     width: 100%;
   }
-  .detailPicSizing{
+
+  .detailPicSizing {
     width: 77%;
   }
-  .cardSizing{
+
+  .cardSizing {
     padding: 0;
   }
+
+  .nav-tabs .dropdown-menu {
+    margin-top: 5%;
+   /* margin-left: 20%;
+   border-radius: 0%;  */
   
+  }
 }
 
 @media (min-width: 578px) {
-  .processSizing{
+  .processSizing {
     width: 35%
   }
-  .orderForm{
 
-width: 85%;
-display:flex;
-  justify-content: center;
-
+  .orderForm {
+    width: 85%;
+    display: flex;
+    justify-content: center;
   }
-  .picSizing{
+
+  .picSizing {
     width: 75%;
   }
-  .detailPicSizing{
+
+  .detailPicSizing {
     width: 50%;
   }
+
   .sizingImg {
     width: 75%;
-
   }
 
   .sizeLogin {
@@ -164,8 +204,8 @@ display:flex;
 
   .stylingUpdateInput {
     width: 100%;
-    background-color:black;
-    border-color: black; 
+    background-color: black;
+    border-color: black;
     color: black;
     text-wrap: wrap;
   }
@@ -175,6 +215,14 @@ display:flex;
   .toggle {
     background-color: yellow;
   }
+
+  
+.nav-tabs .dropdown-menu {
+  margin-top: 5%;
+ margin-left: 20%;
+ border-radius: 0%; 
+
+}
 
 }
 
@@ -191,6 +239,5 @@ display:flex;
 }
 
 .btn-link:hover {
-  background-color:black;
+  background-color: black;
 }
-

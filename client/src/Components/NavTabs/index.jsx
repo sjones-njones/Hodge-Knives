@@ -27,8 +27,8 @@ function NavTabs() {
             <Nav.Link href="/shop">Shop</Nav.Link>
             <Nav.Link href="/care">Knife Care</Nav.Link>
             <NavDropdown className="bg-black" title="Pictures" id="collapsible-nav-dropdown">
-              <NavDropdown.Item className="" href="/past">Past Knives</NavDropdown.Item>
-              <NavDropdown className="process bg-black" title="The Process" id="collapsible-nav-dropdown">
+              <NavDropdown.Item className="p-2 text-center" href="/past">Past Knives</NavDropdown.Item>
+              <NavDropdown className="text-center process bg-black" title="The Process" id="collapsible-nav-dropdown">
                 <NavDropdown.Item className="" href="/process">G10 Build from Drill Bit </NavDropdown.Item>
                 <Dropdown.Divider />
 

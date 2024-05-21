@@ -23,7 +23,7 @@ const Footer = () => {
 </Col> */}
 </Col>
           <Col className="">
-            <img src={Logo} alt="SJ Designs" style={{ width: 150, height: 150 }} />
+            <img src={Logo} alt="SJ Designs" style={{ width: 200, height: 200 }} />
           </Col>
           <Col></Col>
         </Row>
