@@ -7,7 +7,6 @@ import '../../Home.css';
 import { useRef } from "react";
 import emailjs from '@emailjs/browser';
 import Toast from 'react-bootstrap/Toast';
-import FacebookLogo from '../../assets/images/facebookLogoWhite2.png'
 
 const Contact = () => {
   const showToastMessage = () => {

@@ -4,7 +4,6 @@ import { useQuery } from '@apollo/client';
 import { GET_ARCHIVEPRODUCTS } from '../../../utils/queries';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Row, Col } from "react-bootstrap";
-// import { name } from '@cloudinary/url-gen/actions/namedTransformation';
 
 function ArchiveProductList(item) {
   const {
@@ -36,7 +35,11 @@ console.log(data);
           <Col key={product._id} _id={product._id}
           >
             <Link className='links' to={`/archiveProducts/${product._id}`}>
-              <Card className='border-warning hover bg-black h-100'>
+              <Card className='
+              
+              border-warning 
+              
+              hover bg-black h-100'>
                 <Card.Img variant="top" src={product.image} />
                 <Card.Body>
                   <Card.Title className='fs-3 text-white'>{product.name}</Card.Title>

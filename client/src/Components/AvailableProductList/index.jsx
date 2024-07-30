@@ -12,8 +12,7 @@ import { gql } from "@apollo/client";
 import Maker from '../../assets/images/makerPic.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, Row, Col, Container } from "react-bootstrap";
-// import { name } from '@cloudinary/url-gen/actions/namedTransformation';
-
+import '../../index.css';
 function ProductList(item) {
   const {
     image,
@@ -46,7 +45,7 @@ console.log(data);
           <Col className=""key={product._id} _id={product._id}
           >
             <Link className='links' to={`/products/${product._id}`}>
-              <Card className='border-warning hover bg-black h-100'>
+              <Card className='borderBlue hover bg-black h-100'>
                 <Card.Img variant="top" src={product.image} />
                 <Card.Body>
                   <Card.Title className='fs-3 text-white'>{product.name}</Card.Title>

@@ -8,8 +8,8 @@
   background-color: black;
 .hover:hover{
   /* opacity: 0.5; */
-  box-shadow: #f1bc1c 0px 1px 0px,#f1bc1c 0px 0px 5px;
-  background-color: #f1bc1c;
+  box-shadow: rgb(255, 193, 7) 0px 1px 0px,rgb(255, 193, 7) 0px 0px 5px;
+  background-color: rgb(255, 193, 7);
 }
 .links {
   text-decoration: none;
@@ -79,7 +79,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
   .nav-link{
-    color: #f1bc1c;
+    /* color: #f1bc1c; */
+    color: rgb(255, 193, 7);
+  }
+  .blueText{
+    color: rgb(255, 193, 7);
+  }
+  .borderBlue{
+    border-color: rgb(255, 193, 7);
   }
   .nav-link:hover {
 color:white

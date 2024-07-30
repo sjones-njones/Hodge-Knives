@@ -1,5 +1,4 @@
 // import {Link} from 'react-router-dom';
-import FacebookLogo from '../assets/images/facebookLogo.png';
 import { useState } from 'react';
 // import { validateEmail } from '../../utils/helpers';
 import { Form, Button } from 'react-bootstrap';
